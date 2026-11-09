@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIB Bolivia 2026 | Feria Internacional de Turismo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Aplicar tema antes de pintar para evitar flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('tib-theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════ MODAL FAMTRIP (anuncio al ingresar) ═══════════════════════════
+       Aparece automáticamente al cargar la página. También se puede abrir
+       desde el botón "Famtrip" del footer. Cerrar con la X, click en backdrop o tecla ESC.
+
+       PARA EDITAR:
+       - Imágenes:    reemplazar las dos <img> de .famtrip-img (carpeta contenido/)
+       - Enlaces:     reemplazar los href="#" de los botones (Más Info, TikTok, Kick, YouTube)
+       - Texto:       editar título, subtítulo y descripción dentro de .famtrip-body
+  ════════════════════════════════════════════════════════════════════════════════ -->
+  <div class="famtrip-modal" id="famtripModal" role="dialog" aria-modal="true" aria-labelledby="famtripTitle" aria-hidden="true">
+    <div class="famtrip-backdrop" data-famtrip-close></div>
+    <div class="famtrip-card" role="document">
+      <button class="famtrip-close" type="button" data-famtrip-close aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="famtrip-badge">¡Nuevo!</div>
+
+      <div class="famtrip-grid">
+        <!-- IMÁGENES — reemplazar src="" con las imágenes reales del Famtrip -->
+        <div class="famtrip-media">
+          <div class="famtrip-img famtrip-img-1">
+            <img src="https://i.postimg.cc/dQ6SXZX8/DIA-94-2-jpg.jpg" alt="Famtrip TIB Bolivia — imagen 1" />
+            <span class="famtrip-img-placeholder">Imagen Famtrip 1</span>
+          </div>
+          <div class="famtrip-img famtrip-img-2">
+            <img src="https://i.postimg.cc/pVC1757K/DIA-94-jpg.jpg" alt="Famtrip TIB Bolivia — imagen 2" />
+            <span class="famtrip-img-placeholder">Imagen Famtrip 2</span>
+          </div>
+        </div>
+
+        <div class="famtrip-body">
+          <p class="famtrip-eyebrow">Promoción Turística · 2026</p>
+          <h2 class="famtrip-title" id="famtripTitle">Famtrip TIB Bolivia</h2>
+          <p class="famtrip-text">
+            Vive una experiencia única recorriendo los destinos más impresionantes de Bolivia.
+            Conoce nuestras promociones turísticas exclusivas y sigue los streams en vivo
+            en TikTok, Kick y YouTube.
+          </p>
+
+          <div class="famtrip-actions">
+            <!-- MÁS INFORMACIÓN — reemplazar href="#" con el enlace real -->
+            <a href="https://api.whatsapp.com/send?phone=59163162160" class="famtrip-btn-primary" target="_blank" rel="noopener">
+              Más Información
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <div class="famtrip-streams">
+            <p class="famtrip-streams-label">Síguenos en vivo</p>
+            <div class="famtrip-streams-row">
+              <!-- TIKTOK — reemplazar href="#" con el enlace real -->
+              <a href="https://www.tiktok.com/@tib_bolivia" target="_blank" rel="noopener" class="famtrip-stream famtrip-tiktok" aria-label="TikTok TIB Bolivia">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69A8.16 8.16 0 0 0 21.5 10v-3.4a4.85 4.85 0 0 1-1.91-.91z"/></svg>
+                <span>TikTok</span>
+              </a>
+              <!-- KICK — reemplazar href="#" con el enlace real -->
+              <a href="#" target="_blank" rel="noopener" class="famtrip-stream famtrip-kick" aria-label="Kick TIB Bolivia">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h5v5h2V3h5v5h2v3h-2v2h2v3h-2v5h-5v-5h-2v5H3V3zm10 7v4h2v-4h-2z"/></svg>
+                <span>Kick</span>
+              </a>
+              <!-- YOUTUBE — reemplazar href="#" con el enlace real -->
+              <a href="https://www.youtube.com/@TIB-Bolivia" target="_blank" rel="noopener" class="famtrip-stream famtrip-youtube" aria-label="YouTube TIB Bolivia">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ Barra de Navegación ═══════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">
+        <!-- Logo con dos variantes: la blanca se usa en hero/secciones oscuras, la color se usa en navbar scrolled (modo claro) -->
+        <img src="contenido/TIB-Logos/TIB-HORIZONTAL-BLANCO-1.png" alt="TIB Bolivia" class="nav-logo-img nav-logo-white" />
+        <img src="contenido/TIB-Logos/TIB-HORIZONTAL (logo con clores rojo amarillo y verde).png" alt="TIB Bolivia" class="nav-logo-img nav-logo-color" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#feria">Feria TIB Bolivia</a></li>
+        <!-- ═══ FASE 1: Nuevo ítem "Actividades" en menú desktop ═══ -->
+        <li><a href="#actividades">Actividades</a></li>
+        <li><a href="#guia-turistica">Guía Turística</a></li>
+        <li><a href="#stands">Stands</a></li>
+        <li><a href="#prensa">Prensa</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <svg class="th-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="th-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+
+      <!-- ═══ BOTÓN DESPLEGABLE "INFÓRMATE" ═══
+           Sustituye a Stands + Contacto + Reserva tu Stand: cada pregunta
+           enruta al ancla y, si trae data-cform, activa la pestaña de
+           formulario correspondiente dentro de #contacto (ver script.js). -->
+      <div class="nav-informate" id="navInformate">
+        <button type="button" class="nav-cta informate-btn" id="informateBtn" aria-haspopup="true" aria-expanded="false">
+          Infórmate
+          <svg class="ib-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="informate-dropdown" id="informateDropdown">
+          <a href="#stands" class="informate-q">
+            <span class="iq-q">¿Te interesa un espacio para tu empresa?</span>
+            <span class="iq-a">Reserva tu stand →</span>
+          </a>
+          <a href="#contacto" class="informate-q" data-cform="prensa">
+            <span class="iq-q">¿Eres un medio y quieres ser parte?</span>
+            <span class="iq-a">Formulario de prensa →</span>
+          </a>
+          <a href="#visitantes" class="informate-q">
+            <span class="iq-q">¿Cómo solicito una entrada al evento?</span>
+            <span class="iq-a">Información para visitantes →</span>
+          </a>
+          <a href="#contacto" class="informate-q" data-cform="inscripcion">
+            <span class="iq-q">¿Quieres que tu empresa participe?</span>
+            <span class="iq-a">Formulario de inscripción →</span>
+          </a>
+          <a href="#memorias" class="informate-q">
+            <span class="iq-q">¿Quieres conocer nuestro recorrido?</span>
+            <span class="iq-a">En nuestra memoria →</span>
+          </a>
+          <a href="#contacto" class="informate-q" data-cform="general">
+            <span class="iq-q">¿Tienes otra consulta?</span>
+            <span class="iq-a">Contáctanos →</span>
+          </a>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#inicio">Inicio</a>
+      <a href="#feria">Feria TIB Bolivia</a>
+      <!-- ═══ FASE 1: Nuevo ítem "Actividades" en menú mobile ═══ -->
+      <a href="#actividades">Actividades</a>
+      <a href="#guia-turistica">Guía Turística</a>
+      <a href="#stands">Stands</a>
+      <a href="#prensa">Prensa</a>
+      <button class="mobile-theme-toggle" id="mobileThemeToggle" aria-label="Cambiar tema">
+        <svg class="th-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="th-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="mt-label">Cambiar tema</span>
+      </button>
+
+      <div class="mobile-informate" id="mobileInformate">
+        <button type="button" class="mobile-informate-toggle" id="mobileInformateToggle" aria-expanded="false">
+          <span>Infórmate</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-informate-list" id="mobileInformateList">
+          <a href="#stands" class="informate-q">
+            <span class="iq-q">¿Te interesa un espacio para tu empresa?</span>
+            <span class="iq-a">Reserva tu stand →</span>
+          </a>
+          <a href="#contacto" class="informate-q" data-cform="prensa">
+            <span class="iq-q">¿Eres un medio y quieres ser parte?</span>
+            <span class="iq-a">Formulario de prensa →</span>
+          </a>
+          <a href="#visitantes" class="informate-q">
+            <span class="iq-q">¿Cómo solicito una entrada al evento?</span>
+            <span class="iq-a">Información para visitantes →</span>
+          </a>
+          <a href="#contacto" class="informate-q" data-cform="inscripcion">
+            <span class="iq-q">¿Quieres que tu empresa participe?</span>
+            <span class="iq-a">Formulario de inscripción →</span>
+          </a>
+          <a href="#memoria" class="informate-q">
+            <span class="iq-q">Conoce nuestro recorrido</span>
+            <span class="iq-a">en nuestra memoria →</span>
+          </a>
+          <a href="#contacto" class="informate-q" data-cform="general">
+            <span class="iq-q">¿Tienes otra consulta?</span>
+            <span class="iq-a">Contáctanos →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section id="inicio" class="hero has-bg">
+    <!-- Capa de medio dedicada: cambiar <img> por <video> en el futuro sin tocar nada más -->
+    <div class="section-bg" data-bg="hero">
+      <img src="contenido/TIB-img-paisajes/Salar_de_uyuni1.webp" alt="" loading="eager" />
+      <!-- Para video futuro, descomentar:
+      <video autoplay muted loop playsinline poster="contenido/TIB-img-paisajes/Salar_de_uyuni1.webp">
+        <source src="contenido/videos/hero.mp4" type="video/mp4">
+      </video>
+      -->
+      <div class="section-bg-overlay"></div>
+    </div>
+    <div class="hero-mesh"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-body">
+      <div class="hero-badge reveal">FERIA INTERNACIONAL DE TURISMO · 2026</div>
+      <h1 class="hero-title reveal">
+        <span class="ht-tib">TIB</span>
+        <span class="ht-bol">BOLIVIA</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Lideres del sector turístico.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#stands" class="btn-primary">Reserva tu Stand</a>
+        <a href="#feria" class="btn-ghost">Conoce el Evento</a>
+      </div>
+    </div>
+
+    <div class="countdown-wrap reveal">
+      <p class="cd-label">El evento inicia en</p>
+      <div class="countdown">
+        <div class="cd-block"><span class="cd-num" id="cd-days">000</span><span class="cd-unit">Días</span></div>
+        <span class="cd-colon">:</span>
+        <div class="cd-block"><span class="cd-num" id="cd-hours">00</span><span class="cd-unit">Horas</span></div>
+        <span class="cd-colon">:</span>
+        <div class="cd-block"><span class="cd-num" id="cd-min">00</span><span class="cd-unit">Min</span></div>
+        <span class="cd-colon">:</span>
+        <div class="cd-block"><span class="cd-num" id="cd-sec">00</span><span class="cd-unit">Seg</span></div>
+      </div>
+      <p class="cd-date">22 · 23 · 24 de Octubre, 2026 &mdash; La Paz, Bolivia</p>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span></span>
+      <p>Scroll</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SPONSORS ═══════════════════════════ -->
+  <!--
+    Cada .sponsor-pill tiene un <img> con src="" listo para recibir el logo del sponsor.
+    Cuando llegue el logo: solo agregar la URL en el atributo src=""
+    Si src está vacío, el script.js automáticamente muestra el texto fallback (.sp-fallback).
+    El espacio del slot ya está dimensionado (ver .sponsor-pill en styles.css).
+  -->
+  <div class="sponsors-strip">
+    <p class="strip-label">CON El APOLLO DE</p>
+    <div class="sponsors-track">
+      <button class="sponsors-arrow sponsors-arrow-left" type="button" aria-label="Ver sponsors anteriores">
+        <span aria-hidden="true">&#8249;</span>
+      </button>
+      <div class="sponsors-scroll" id="sponsorsScroll">
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\8 TSTT (1).png" alt="Sponsor 01" data-logo="sponsor-01" /><span class="sp-fallback">Sponsor 01</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\ABATUR  DIA 136.png" alt="Sponsor 02" data-logo="sponsor-02" /><span class="sp-fallback">Sponsor 02</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\ACESTUR.png" alt="Sponsor 03" data-logo="sponsor-03" /><span class="sp-fallback">Sponsor 03</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\ACTUAL 1.jpeg" alt="Sponsor 04" data-logo="sponsor-04" /><span class="sp-fallback">Sponsor 04</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\ASEMAT.png" alt="Sponsor 05" data-logo="sponsor-05" /><span class="sp-fallback">Sponsor 05</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\ASODEGUIATUR.png" alt="Sponsor 06" data-logo="sponsor-06" /><span class="sp-fallback">Sponsor 06</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\BLACK BULLS NEGRO.png" alt="Sponsor 07" data-logo="sponsor-07" /><span class="sp-fallback">Sponsor 07</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\BTC - GO.png" alt="Sponsor 08" data-logo="sponsor-08" /><span class="sp-fallback">Sponsor 08</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\CABOTUR.png" alt="Sponsor 09" data-logo="sponsor-09" /><span class="sp-fallback">Sponsor 09</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\cámara hotelera de la paz_.jpg" alt="Sponsor 10" data-logo="sponsor-10" /><span class="sp-fallback">Sponsor 10</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\canotur.png" alt="Sponsor 11" data-logo="sponsor-11" /><span class="sp-fallback">Sponsor 11</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\UNI CATOLICA.png" alt="Sponsor 12" data-logo="sponsor-12" /><span class="sp-fallback">Sponsor 12</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\CISNE.png" alt="Sponsor 13" data-logo="sponsor-13" /><span class="sp-fallback">Sponsor 13</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\COLPROTUR LP.png" alt="Sponsor 14" data-logo="sponsor-14" /><span class="sp-fallback">Sponsor 14</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\FEBOGUIT.png" alt="Sponsor 15" data-logo="sponsor-15" /><span class="sp-fallback">Sponsor 15</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\GUIASTUR.png" alt="Sponsor 16" data-logo="sponsor-16" /><span class="sp-fallback">Sponsor 16</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\HOTEL ESTELAR.png" alt="Sponsor 17" data-logo="sponsor-17" /><span class="sp-fallback">Sponsor 17</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\HOTEL LAS BRISAS SUR.png" alt="Sponsor 18" data-logo="sponsor-18" /><span class="sp-fallback">Sponsor 18</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\HOTEL LAS BRISAS.png" alt="Sponsor 19" data-logo="sponsor-19" /><span class="sp-fallback">Sponsor 19</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\hotel panamerican_.png" alt="Sponsor 20" data-logo="sponsor-20" /><span class="sp-fallback">Sponsor 20</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\LAS TORRES MALL .png" alt="Sponsor 21" data-logo="sponsor-21" /><span class="sp-fallback">Sponsor 21</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\LOGO AVIALINE VECTOR.png" alt="Sponsor 22" data-logo="sponsor-22" /><span class="sp-fallback">Sponsor 22</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\LOGO CONTAME 3D.jpg" alt="Sponsor 23" data-logo="sponsor-23" /><span class="sp-fallback">Sponsor 23</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\logo emprende azul.png" alt="Sponsor 24" data-logo="sponsor-24" /><span class="sp-fallback">Sponsor 24</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\LOGO WHATS PERÚ.png" alt="Sponsor 25" data-logo="sponsor-25" /><span class="sp-fallback">Sponsor 25</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\LOGO-EDITADO-BY-T.png" alt="Sponsor 26" data-logo="sponsor-26" /><span class="sp-fallback">Sponsor 26</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\MAMANI MAMANI.png" alt="Sponsor 27" data-logo="sponsor-27" /><span class="sp-fallback">Sponsor 27</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\MANTA NEGRO.png" alt="Sponsor 28" data-logo="sponsor-28" /><span class="sp-fallback">Sponsor 28</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\mesa de turismo_.png" alt="Sponsor 29" data-logo="sponsor-29" /><span class="sp-fallback">Sponsor 29</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\pesoa models.png" alt="Sponsor 30" data-logo="sponsor-30" /><span class="sp-fallback">Sponsor 30</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\RED TRAVEL BOLIVIA.png" alt="Sponsor 32" data-logo="sponsor-32" /><span class="sp-fallback">Sponsor 32</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\RELAMPAGO.png" alt="Sponsor 33" data-logo="sponsor-33" /><span class="sp-fallback">Sponsor 33</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\revista Óptima (Ana María)_.jpg" alt="Sponsor 34" data-logo="sponsor-34" /><span class="sp-fallback">Sponsor 34</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\SAN LORENZO.png" alt="Sponsor 35" data-logo="sponsor-35" /><span class="sp-fallback">Sponsor 35</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\SOCIEDAD ORQUESTAL.png" alt="Sponsor 36" data-logo="sponsor-36" /><span class="sp-fallback">Sponsor 36</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\TITICACA BOLIVIA.png" alt="Sponsor 37" data-logo="sponsor-37" /><span class="sp-fallback">Sponsor 37</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\TRAVEL.png" alt="Sponsor 38" data-logo="sponsor-38" /><span class="sp-fallback">Sponsor 38</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\tst todos somos turismo_.jpg" alt="Sponsor 39" data-logo="sponsor-39" /><span class="sp-fallback">Sponsor 39</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\UNIFRANZ.png" alt="Sponsor 40" data-logo="sponsor-40" /><span class="sp-fallback">Sponsor 40</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\ESCUDO INSTITUCIONAL EN LETRA DORADA_extend.jpg" alt="Sponsor 41" data-logo="sponsor-41" /><span class="sp-fallback">Sponsor 41</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\MARCA CIUDAD letra negra.png" alt="Sponsor 42" data-logo="sponsor-42" /><span class="sp-fallback">Sponsor 42</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\GADLP_sin fondo.png" alt="Sponsor 43" data-logo="sponsor-43" /><span class="sp-fallback">Sponsor 43</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\logo 7 pecados vinos.jpg" alt="Sponsor 44" data-logo="sponsor-44" /><span class="sp-fallback">Sponsor 44</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\logo fest dorado y azul .png" alt="Sponsor 45" data-logo="sponsor-45" /><span class="sp-fallback">Sponsor 45</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\logo medlaser1.png" alt="Sponsor 46" data-logo="sponsor-46" /><span class="sp-fallback">Sponsor 46</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\navtur color_.png" alt="Sponsor 47" data-logo="sponsor-47" /><span class="sp-fallback">Sponsor 47</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\Logo Preste Final_Color.png" alt="Sponsor 48" data-logo="sponsor-48" /><span class="sp-fallback">Sponsor 48</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\Viceministerio_sin fondo.png" alt="Sponsor 49" data-logo="sponsor-49" /><span class="sp-fallback">Sponsor 49</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\vikingacafe-sin fondo.png" alt="Sponsor 50" data-logo="sponsor-50" /><span class="sp-fallback">Sponsor 50</span></div>
+        <div class="sponsor-pill"><img src="contenido\Logos-Sponsor\Yape 1.png" alt="Sponsor 51" data-logo="sponsor-51" /><span class="sp-fallback">Sponsor 51</span></div>
+      </div>
+      <button class="sponsors-arrow sponsors-arrow-right" type="button" aria-label="Ver más sponsors">
+        <span aria-hidden="true">&#8250;</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- ═══════════════════════════ COBERTURA MEDIÁTICA ═══════════════════════════ -->
+  <div class="media-row">
+    <div class="section-label reveal">COBERTURA MEDIÁTICA</div>
+    <div class="media-cards">
+      <a href="https://miradasnoticias.com/2025/01/09/tib-bolivia-2025-lanzamiento-oficial-del-evento-que-conecta-al-mundo-turistico/" target="_blank" class="media-card reveal">
+        <div class="mc-icon" data-url="https://miradasnoticias.com/2025/01/09/tib-bolivia-2025-lanzamiento-oficial-del-evento-que-conecta-al-mundo-turistico/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z"/><path d="M17 6v4h4"/><path d="M9 11h6M9 15h4"/></svg>
+        </div>
+        <div class="mc-body">
+          <span class="mc-source">Revista Miradas</span>
+          <p>Artículo sobre el lanzamiento oficial del TIB Bolivia 2025 en la Cámara Nacional de Comercio.</p>
+          <span class="mc-link">Leer artículo →</span>
+        </div>
+      </a>
+      <a href="https://www.facebook.com/share/v/17j3ZUhMBy/" target="_blank" class="media-card reveal">
+        <div class="mc-icon" data-url="https://www.facebook.com/share/v/17j3ZUhMBy/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="mc-body">
+          <span class="mc-source">Programa Contame · ATB</span>
+          <p>Cobertura especial de la Feria Internacional de Turismo y Negocios – TIB Bolivia 2025.</p>
+          <span class="mc-link">Ver cobertura →</span>
+        </div>
+      </a>
+      <a href="https://www.facebook.com/share/v/1BmMdhhQEc/" target="_blank" class="media-card reveal">
+        <div class="mc-icon" data-url="https://www.facebook.com/share/v/1BmMdhhQEc/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M2 12h2M20 12h2M12 2v2M12 20v2"/></svg>
+        </div>
+        <div class="mc-body">
+          <span class="mc-source">Radio Unión</span>
+          <p>Cobertura del lanzamiento con Luis Ampuero – Presidente de CABOTUR.</p>
+          <span class="mc-link">Escuchar →</span>
+        </div>
+      </a>
+      <!-- Agregar más tarjetas de medios aquí siguiendo el mismo formato Ej: 
+       <a href="URL_DEL_ARTICULO" target="_blank" class="media-card reveal">
+        <div class="mc-icon" data-url="URL_DEL_ARTICULO">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="mc-body">
+          <span class="mc-source">FUENTE_DEL_ARTICULO</span>
+          <p>RESUMEN_DEL_ARTICULO</p>
+          <span class="mc-link">Leer artículo →</span>
+        </div>
+      </a> -->
+      
+    </div>
+  </div>
+
+  <!-- MAP HERO donde se realizara el evento La Paz Bolivia -->
+  <div class="map-hero reveal">
+    <div class="map-hero-label">
+      <div class="section-tag-v">UBICACIÓN</div>
+      <h3>La Paz, Bolivia</h3>  
+    </div>
+    <!--
+    <div class="map-hero-frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122409.78532734564!2d-68.12375317876082!3d-16.510652814940002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf0a04f5a40f%3A0x57dbfc76b4458ab3!2sLa%20Paz!5e0!3m2!1ses!2sbo!4v1780408870795!5m2!1ses!2sbo"
+        width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+    -->
+    <div class="memorias-highlights">
+          <div class="carousel-strip">
+            <p class="strip-label"></p>
+            <div class="carousel-track">
+              <div class="carousel-inner">
+                <div class="carousel-scroll" id="memoriasScroll">
+                  <div class="carousel-card">
+                    <img src="https://i.postimg.cc/xdVJCrmM/MG-3025-convertido-a-853x1280.jpg" alt="Inauguración Feria Internacional de Turismo TIB Bolivia 2025" loading="lazy" />
+                    <strong></strong>
+                  </div>
+                  <div class="carousel-card">
+                    <img src="https://i.postimg.cc/LsFYXdPf/J7B6047-convertido-a-853x1280.jpg" alt="Firma de convenio TIB BOLIVIA y CANOTUR" loading="lazy" />
+                    <strong></strong>
+                  </div>
+                  <div class="carousel-card">
+                    <img src="https://i.postimg.cc/fbQtL4dd/BOL-6538-convertido-a-720x1280.jpg" alt="Evento TIB Bolivia 2025" loading="lazy" />
+                    <strong></strong>
+                  </div>
+                  <div class="carousel-card">
+                    <img src="https://i.postimg.cc/xdVJCrmM/MG-3025-convertido-a-853x1280.jpg" alt="Inauguración Feria Internacional de Turismo TIB Bolivia 2025" loading="lazy" />
+                    <strong></strong>
+                  </div>
+                  <div class="carousel-card">
+                    <img src="https://i.postimg.cc/LsFYXdPf/J7B6047-convertido-a-853x1280.jpg" alt="Firma de convenio TIB BOLIVIA y CANOTUR" loading="lazy" />
+                    <strong></strong>
+                  </div>
+                  <div class="carousel-card">
+                    <img src="https://i.postimg.cc/fbQtL4dd/BOL-6538-convertido-a-720x1280.jpg" alt="Evento TIB Bolivia 2025" loading="lazy" />
+                    <strong></strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <!-- ═══════════════════════════ SECCIÓN 2: FERIA ═══════════════════════════ -->
+  <section id="feria" class="section-feria has-bg">
+    <div class="section-bg" data-bg="feria">
+      <img src="contenido/TIB-img-paisajes/Salar_de_uyuni3.webp" alt="" loading="lazy" />
+      <div class="section-bg-overlay"></div>
+    </div>
+    <div class="section-intro reveal">
+      <div class="section-tag-v">FERIA</div>
+      <h2 class="section-h2">¿Qué es TIB Bolivia?</h2>
+    </div>
+    <div class="feria-layout">
+      <div class="feria-text reveal">
+        <p>TIB BOLIVIA es la plataforma comercial e internacional más importante del sector turístico en nuestro país. Es el punto de encuentro estratégico diseñado para conectar a consolidadoras, tour operadoras, cadenas hoteleras, aerolíneas, transporte turístico, rent-a-car, guías y profesionales clave del rubro turístico con mercados globales y público general.</p>
+        <p>A través de una feria especializada y encuentros de negocios de alto nivel, ofrecemos un escenario único para la creación de alianzas comerciales, el intercambio de experiencias y la apertura de nuevas oportunidades de inversión a nivel nacional e internacional.</p>
+        <p> Luego del rotundo éxito de nuestra primera versión, TIB BOLIVIA 2026 se consolida en su segunda edición como el motor que impulsa, transforma y proyecta el crecimiento del turismo boliviano hacia el mundo.</p>
+        <a href="#stands" class="btn-primary">Información y Participa</a>
+      </div>
+      <div class="mv-stack">
+        <div class="mv-card reveal">
+          <div class="mv-icon">M</div>
+          <h3>Misión</h3>
+          <p>Somos el espacio de promoción turística y negociación por excelencia para empresas turísticas nacionales e internacionales, ofreciendo un ambiente propicio para establecer relaciones comerciales fructíferas que fomenten el crecimiento del sector.</p>
+        </div>
+        <div class="mv-card reveal">
+          <div class="mv-icon">V</div>
+          <h3>Visión</h3>
+          <p>Ser reconocidos por contribuir al desarrollo y el crecimiento turístico, económico y cultural de Bolivia, fortaleciendo el turismo del país a nivel nacional e internacional a través de la promoción y la colaboración.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORGANIZADORES -->
+    <div class="organizers-wrap">
+      <div class="section-label reveal">ORGANIZADORES</div>
+      <div class="org-grid">
+
+        <div class="org-card reveal">
+          <div class="org-logo-wrap">
+            <img src="contenido\TIB-Logos\MHC_Logo-con-transparencia.png" alt="Millennium H&amp;C" data-logo="org-millennium" />
+            <span class="org-initials">MH</span>
+          </div>
+          <h4>Millennium H&amp;C</h4>
+          <p>Empresa especializada con sede en Alemania. Impulsa la conexión con el mercado europeo y la inversión en el sector turístico.</p>
+        </div>
+
+        <div class="org-card reveal">
+        <div class="org-logo-wrap">
+                  <!-- en src=" " cambia la ruta del logo -->
+          <img src="contenido\TIB-Logos\logo scatur operator_Mesa de trabajo 1.png" alt="SCATUR Bolivia" data-logo="org-scatur" />
+          <span class="org-initials">SC</span>
+        </div>
+          <h4>SCATUR Bolivia</h4>
+          <p>Empresa de viajes y turismo que impulsa la conexión con destinos nacionales e internacionales y la promoción de paquetes turísticos de calidad.</p>
+        </div>
+
+        <div class="org-card reveal">
+          <div class="org-logo-wrap">
+            <img src="contenido\TIB-Logos\LOGO AGB Nuevo.png" alt="AGB Bolivia" data-logo="org-agb" />
+            <span class="org-initials">AGB</span>
+          </div>
+          <h4>AGB Bolivia</h4>
+          <p>Empresa boliviana especializada en inflables publicitarios. Fortalece la conexión con el mercado local y la promoción turística.</p>
+        </div>
+
+        <div class="org-card reveal">
+          <div class="org-logo-wrap">
+            <img src="contenido\TIB-Logos\domos titicaca logo.png" alt="Domos Titicaca" data-logo="org-domos" />
+            <span class="org-initials">DT</span>
+          </div>
+          <h4>Domos Titicaca</h4>
+          <p>Proyecto innovador de glamping de lujo frente al Lago Titicaca. Impulsa el turismo sostenible y experiencias únicas en Bolivia.</p>
+        </div>
+
+        <div class="org-card reveal">
+          <div class="org-logo-wrap">
+            <img src="contenido\TIB-Logos\CTA.png" alt="CTA República Dominicana" data-logo="org-cta" />
+            <span class="org-initials">CTA</span>
+          </div>
+          <h4>CTA República Dominicana</h4>
+          <p>Principal referente del turismo dominicano. Fortalece la conexión Caribe–Andina y enriquece la visión de negocios internacional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SECCIÓN 3: TIB BOLIVIA ═══════════════════════════ -->
+  <section id="tib" class="section-tib has-bg">
+    <div class="section-bg" data-bg="tib">
+      <img src="contenido/TIB-img-paisajes/paisaje_vertical_para formatos especiales.webp" alt="" loading="lazy" />
+      <div class="section-bg-overlay"></div>
+    </div>
+
+    <!-- POR QUÉ PARTICIPAR -->
+    <div class="why-wrap">
+      <div class="section-intro reveal">
+        <div class="section-tag-v">TIB BOLIVIA</div>
+        <h2 class="section-h2">¿Por qué Participar?</h2>
+        <p class="section-desc">TIB BOLIVIA 2026 es la plataforma de negocios de alto nivel que conecta de forma estratégica al sector turístico nacional e internacional. Participar en esta segunda edición le permitirá posicionar su marca ante mercados globales y acceder a oportunidades exclusivas de crecimiento a través de nuestros pilares estratégicos:</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="bc-num">01</div>
+          <div class="bc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h4>Encuentros Comerciales Agendados</h4>
+          <p>Optimice su tiempo mediante citas de negocios preestablecidas, diseñadas metodológicamente para maximizar la eficiencia y concretar alianzas comerciales de alto valor.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="bc-num">02</div>
+          <div class="bc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 12h20"/></svg></div>
+          <h4>Travel Market de Alto Impacto</h4>
+          <p>Participe activamente en dos jornadas exclusivas de intercambio comercial internacional y dinamice su cartera de clientes.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="bc-num">03</div>
+          <div class="bc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h4>Networking Empresarial Libre</h4>
+          <p>Acceda a espacios de interacción directa orientados a entablar relaciones corporativas de largo plazo con los tomadores de decisión del rubro.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="bc-num">04</div>
+          <div class="bc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+          <h4>Acuerdos y Red de Contactos Exclusiva</h4>
+          <p>Expanda su red de contactos dentro de un entorno empresarial selecto, compuesto por las organizaciones y empresas más reconocidas de la industria.</p>
+        </div>
+        <!-- para mas beneficios se pueden agregar más tarjetas ej:
+        <div class="benefit-card reveal">
+          <div class="bc-num">05</div>
+          <div class="bc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+          <h4>Texto principal</h4>
+          <p>Descripción del beneficio.</p>
+        </div>
+        -->
+      </div>
+    </div>
+    <!-- QUIÉNES PARTICIPAN -->
+    <div class="who-wrap">
+      <div class="section-intro reveal">
+        <h2 class="section-h2">¿Quiénes Participan?</h2>
+        <p class="section-desc">TIB BOLIVIA 2026 reúne en un solo espacio a los líderes, tomadores de decisión y actores más influyentes de la cadena de valor del turismo.</p>
+      </div>
+      <!-- ═══════════════════════════ CAROUSEL Quiénes Participan ═══════════════════════════ -->
+        <div class="carousel-strip">
+          <p class="strip-label"></p>
+          <div class="carousel-track">
+            <div class="carousel-inner">
+              <div class="carousel-scroll" id="featureScroll">
+              <div class="carousel-card">
+                <strong>Agencias de viajes y turismo</strong>
+              </div>
+              <div class="carousel-card">
+                <strong>Compañías aéreas</strong>
+              </div>
+              <div class="carousel-card">
+                <strong>Seguros de asistencia al viajero</strong>
+              </div>
+              <div class="carousel-card">
+                <strong>Organismos nacionales e internacionales</strong>
+              </div>
+              <div class="carousel-card">
+                <strong>Fondos de promoción turística</strong>
+              </div>
+              <div class="carousel-card">
+                <strong>Asociaciones de representación turística</strong>
+              </div>
+              <div class="carousel-card">
+                <strong>Instancias gubernamentales afines</strong>
+              </div>
+              <div class="carousel-card">
+                <strong>Hoteles</strong>
+              </div>
+              <div class="carousel-card" aria-hidden="true">
+                <strong>Agencias de Viajes Operadoras en turismo</strong>
+              </div>
+              <div class="carousel-card" aria-hidden="true">
+                <strong>Software especializado en turismo y hotelería</strong>
+              </div>
+              <div class="carousel-card" aria-hidden="true">
+                <strong>Embajadas dentro de Bolivia</strong>
+              </div>
+              <div class="carousel-card" aria-hidden="true">
+                <strong>Agencias de Viajes Mayoristas en turismo</strong>
+              </div>
+              <div class="carousel-card" aria-hidden="true">
+                <strong>Cruceros</strong>
+              </div>
+              <div class="carousel-card" aria-hidden="true">
+                <strong>Público en general</strong>
+              </div>
+              <div class="carousel-card" aria-hidden="true">
+                <strong>Ren a Car</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+    </div>
+
+    <!-- CÓMO PARTICIPAR -->
+    <div id="como-participar" class="how-wrap">
+      <div class="section-intro reveal">
+        <h2 class="section-h2">¿Cómo Participar?</h2>
+        <p class="section-desc">¡Sé el protagonista de la TIB BOLIVIA!</p>
+        <p class="section-desc">No pierdas la oportunidad de conectarte con los principales actores del sector.</p>
+      </div>
+      <div class="how-layout">
+        <div class="how-info reveal">
+          <h3>Contáctanos Directamente</h3>
+          <div class="how-contact-item">
+            <div class="hci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <p class="hci-label">Email</p>
+              <a href="mailto:tibbolivia26@gmail.com ">tibbolivia26@gmail.com</a>
+            </div>
+          </div>
+          <div class="how-contact-item">
+            <div class="hci-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
+            <div>
+              <p class="hci-label">WhatsApp</p>                                <!-- Cambiar el número de celular -->
+              <a href="https://api.whatsapp.com/send?phone=59160702277" target="_blank">+591 60702277 /</a>
+              <a href="https://api.whatsapp.com/send?phone=59163162160" target="_blank">+591 63162160</a>
+            </div>
+          </div>
+          <div class="how-contact-item">
+            <div class="hci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <p class="hci-label">Torres Mall</p>
+              <a href="https://maps.app.goo.gl/VsYeUU63U62MD9z38" target="_blank">Av. Arce, La Paz, Bolivia</a>
+            </div>
+          </div>
+          <div class="how-map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.328509064404!2d-68.1263300247236!3d-16.5095048409704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f206175318d89%3A0x632dbaa19ddd3f8a!2sLas%20Torres%20Mall!5e0!3m2!1ses!2sus!4v1780408506563!5m2!1ses!2sus"
+              width="100%" height="250" style="border:0;border-radius:12px;" allowfullscreen loading="lazy">
+            </iframe>
+          </div>
+        </div>
+          <div class="como-participar-images">    
+            <div class="como-participar-image">
+              <img src="https://i.postimg.cc/MGgJ6HSv/IMG-20260616-105433-1-jpg.jpg" alt="Actividades culturales" loading="lazy" />     
+            </div>
+          </div>
+            <a href="#contacto" class="btn-primary" data-cform="inscripcion">Envianos tu solicitud</a>
+        </div>
+               
+        <!-- Formulario de Inscripción sección Como participar -->
+      </div>
+    </div>
+                                  <!-- VISITANTES -->
+    <div id="visitantes" class="visitors-wrap">
+      <div class="section-intro reveal">
+        <h2 class="section-h2">Visitantes</h2>
+        <p class="section-desc">¿Por qué visitarnos?</p>
+      </div>
+      <div class="visitors-tabs">
+        <button class="vtab active" data-tab="prof">Profesionales</button>
+        <button class="vtab" data-tab="pub">Público General</button>
+      </div>
+      <div class="vtab-content active" id="tab-prof">
+        <p>TIB Bolivia es una oportunidad única para empresas y profesionales del turismo que buscan alianzas estratégicas nacionales e internacionales. Con encuentros comerciales agendados y un Travel Market de dos días, el evento ofrece networking exclusivo, acceso a nuevos mercados y beneficios como consultoría en marketing con descuento y difusión gratuita por un año en una guía turística internacional digital, además de impulsar la creación de una Asociación Internacional de Turismo.</p>
+      <a href="#contacto" class="btn-primary" data-cform="general">Inscribirse</a>
+      </div>
+      <div class="vtab-content" id="tab-pub">
+        <p>El público general también se beneficia al asistir a TIB Bolivia, donde podrá descubrir nuevas ofertas y servicios turísticos directamente de operadores, hoteles, aerolíneas, guías y proveedores del sector. El evento ofrece acceso a información de primera mano, promociones exclusivas, actividades interactivas y networking libre con empresas nacionales e internacionales.</p>
+      <a href="#contacto" class="btn-primary" data-cform="general">Inscribirse</a>
+      </div>
+      <!-- Formulario de Inscripción -->
+      
+      <p class="visitors-note reveal">La participación tanto de profesionales del turismo como del público general en TIB BOLIVIA es esencial para aprovechar oportunidades de crecimiento y desarrollo.</p>
+    </div>
+  </section>
+<!-- ═══════════════════════════ Guia Turistaca ═══════════════════════════ -->
+<section id="guia-turistica" class="section-guia-turistica has-bg">
+  <div class="guia-turistica has-bg">
+    <div class="section-bg" data-bg="guia-turistica">
+      <img src="contenido/TIB-img-paisajes/Copacabana.webp" alt="" loading="lazy" />
+      <div class="section-bg-overlay"></div>
+    </div>
+    <div class="dcta-inner reveal">
+      <div class="dcta-text">
+        <div class="section-tag-v">Guía Turística</div>
+        <h2>La Guía Turística de TIB Bolivia</h2>
+        <p>Esta es una plataforma dedicada a ofrecer información sobre los servicios turísticos de agencias bolivianas y extranjeras, ofreciando una mejor experiencia para los visitantes en cuanto a la busqueda de empresas que le brinden lo que necesitan.</p>
+        <div class="dcta-benefits">
+          <div class="dcb"><span class="dcb-dot"></span><strong>Facilidad</strong></div>
+          <div class="dcb"><span class="dcb-dot"></span><strong>Accesibilidad</strong></div>
+          <div class="dcb"><span class="dcb-dot"></span><strong>Confianza</strong></div>
+        </div>
+      </div>
+      <div class="dcta-actions">
+        <!-- Vista previa de la página de la Guía Turística -->
+        <a href="https://ecomarketmex.com/plantillas/directorioturismo/index.php" target="_blank" class="gt-preview reveal" aria-label="Ver Guía Turística">
+          <div class="mc-icon" data-url="https://ecomarketmex.com/plantillas/directorioturismo/index.php">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z"/><path d="M17 6v4h4"/><path d="M9 11h6M9 15h4"/></svg>
+        </div>
+          <img src="https://image.thum.io/get/https://ecomarketmex.com/plantillas/directorioturismo/index.php" alt="Vista previa de la Guía Turística TIB Bolivia" loading="lazy" />
+          <span class="gt-preview-link">Ver Guía Turística →</span>
+        </a>
+        <a href="https://ecomarketmex.com/plantillas/directorioturismo/index.php" class="btn-primary">Inscribirse</a>
+        <a href="https://api.whatsapp.com/send?phone=59163162160" class="btn-ghost">Más Información</a>
+      </div>
+  </div>
+</section>
+  <!-- ═══════════════════════════ STANDS ═══════════════════════════ -->
+  <section id="stands" class="section-stands has-bg">
+    <div class="section-bg" data-bg="stands">
+      <img src="contenido/TIB-img-paisajes/Salar_de_uyuni2.webp" alt="" loading="lazy" />
+      <div class="section-bg-overlay"></div>
+    </div>
+    <div class="stands-inner">
+      <div class="section-intro reveal">
+        <div class="section-tag-v">EXPOSITORES</div>
+        <h2 class="section-h2">Adquiere tu Stand</h2>
+        <p class="section-h1">Elige tu espacio en TIB Bolivia 2026 y posiciona tu empresa frente a miles de visitantes del sector turístico.</p>
+      </div>
+      <div class="stands-layout">
+        <!-- Planimetría placeholder -->
+        <div class="plani-wrap reveal">
+          <div class="plani-header">
+            <div class="plani-notice">
+              <span class="plani-badge-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                Planimetría por sectores y disponibilidad de stands
+              </span>
+              <p>Módulos base de 2×2 m. Si necesitas un espacio mayor (2×4 o 2×6 m, uniendo módulos contiguos) indícalo en el formulario al enviar tu solicitud.</p>
+            </div>
+            <div class="plani-legend">
+              <div class="leg-item"><span class="leg-dot leg-avail"></span>Disponible</div>
+              <div class="leg-item"><span class="leg-dot leg-res"></span>Reservado</div>
+              <div class="leg-item"><span class="leg-dot leg-sel"></span>Seleccionado</div>
+            </div>
+          </div>
+        <!-- El área central se destaca visualmente para resaltar el escenario principal -->
+          <!--
+          <div class="plani-stage">
+            <span>★ STANDS CASA GOITIA · 43 STANDS ★</span>
+          </div>
+
+          <div class="plani-grid" data-plani="casa"> 
+            <!-- Generado por script.js
+          </div>
+          <div class="plani-stage">
+          <span>★ STANDS PATIO/PLAZA · 25 STANDS ★</span>
+          </div>
+          
+          <div class="plani-grid" data-plani="patio"> 
+            <!-- Generado por script.js 
+          </div>
+          <div class="plani-stage">
+            <span>★ STANDS SALON TORRES MALL · 31 STANDS ★</span>
+          </div>
+          
+          <div class="plani-grid" data-plani="torres"> 
+            <!-- Generado por script.js 
+          </div>
+
+          <p class="plani-click-note">Haz clic en un stand disponible para seleccionarlo</p>
+        </div>
+        -->
+        <!-- Formulario -->
+        <form class="tib-form stands-form reveal" id="standsForm">
+          <h3>Solicitar Stand</h3>
+          <div class="selected-stand-indicator" id="selectedStandIndicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
+            <span>Stand seleccionado:</span>
+            <strong id="selectedStandValue">Ninguno</strong>
+          </div>
+          <input type="hidden" id="standInput" name="stand" />
+          <div class="form-row">
+            <div class="form-group"><input type="text" name="nombre" placeholder="Nombre" required /></div>
+            <div class="form-group"><input type="text" name="apellido" placeholder="Apellido" required /></div>
+          </div>
+          <div class="form-group"><input type="email" name="email" placeholder="Email" required /></div>
+          <div class="form-row">
+            <div class="form-group phone-wrap">
+              <select class="phone-code">
+                <option value="+591">🇧🇴 +591</option>
+                <option value="+54">🇦🇷 +54</option>
+                <option value="+55">🇧🇷 +55</option>
+                <option value="+56">🇨🇱 +56</option>
+                <option value="+57">🇨🇴 +57</option>
+                <option value="+51">🇵🇪 +51</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+34">🇪🇸 +34</option>
+                <option value="other">🌐 Otro</option>
+              </select>
+              <input type="text" class="phone-code-manual" placeholder="+XX" maxlength="6" />
+              <input type="tel" placeholder="Número móvil" />
+            </div>
+            <div class="form-group"><input type="text" name="empresa" placeholder="Empresa" required /></div>
+          </div>
+          <div class="form-group">
+            <select name="tipoStand">
+              <option value="" disabled selected>Tipo de stand</option>
+              <option>Stand Básico (2×2 m)</option>
+              <option>Stand Estándar (2×4 m)</option>
+              <option>Stand Premium (2×6 m)</option>
+              <!-- <option>Stand Corporativo (personalizado)</option> -->
+            </select>
+          </div>
+          <div class="form-group"><textarea name="comentarios" placeholder="Comentarios adicionales o preferencias de ubicación" rows="3"></textarea></div>
+          <button type="submit" class="btn-submit">Solicitar Stand</button>
+          <p class="form-note">Nos contactaremos contigo para confirmar disponibilidad y tarifas.</p>
+          <p class="form-note">Tambien puedes solicitar el mapa en imagen de tu stand para ver la ubicación exacta y el entorno del mismo.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+  <!-- ═══════════════════════════ NUEVA SECCIÓN: MEMORIAS ═══════════════════════════ -->
+  <section id="memorias" class="section-memorias has-bg">
+    <div class="section-bg" data-bg="memorias">
+      <img src="contenido/TIB-img-paisajes/rurrenabaque-Bolivia.webp" alt="" loading="lazy" />
+      <div class="section-bg-overlay"></div>
+    </div>
+    <div class="memorias-inner">
+      <div class="section-intro reveal">
+        <div class="section-tag-v">EDICIÓN ANTERIOR</div>
+        <h2 class="section-h2">Memoria TIB Bolivia 2025</h2>
+        <p class="section-strong">Revive los mejores momentos de nuestra primera edición y descubre el impacto que generamos en el sector turístico boliviano e internacional.</p>
+      </div>
+<div class="memorias-highlights">
+          <div class="carousel-strip">
+            <p class="strip-label"></p>
+            <div class="carousel-track">
+              <div class="carousel-inner">
+                <div class="carousel-scroll" id="memoriasScroll">
+                  <!-- Estas tarjetas pueden ser imágenes de momentos destacados del evento, como la inauguración, conferencias, stands, actividades culturales, etc. -->
+                  <!-- Ejemplo de tarjeta con imagen local:
+                  <div class="carousel-card">
+                    <img src="contenido/TIB-img-paisajes/Salar_de_uyuni1.webp" alt="Salar de Uyuni" loading="lazy" />
+                    <strong>Inauguración · Escenario Principal</strong>
+                  </div> 
+                  -->
+                  <!-- O tambien pueden ser imagenes sacadas de un enlace ejemplo: <-->
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/KzD6tbwP/Actividades-culturales-TIB-Bolivia-Hotel-Calacoto.jpg" alt="Actividades Culturales hotel Calacoto" loading="lazy" />
+                    <strong>Actividades Culturales Hotel Calacoto</strong>                   
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/qRxP2rSm/Actividades-de-culturales-en-TIB-Bolivia.jpg" alt="Actividades Culturales TIB Bolivia" loading="lazy" />
+                    <strong>Actividades Culturales TIB Bolivia</strong>
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/x8jWR7SV/Autoridades-de-turismo-presentes-en-el-lanzamiento-enero-2026.jpg" alt="Autoridades de turismo presentes en el lanzamiento" loading="lazy" />
+                    <strong>Autoridades de turismo presentes en el lanzamiento</strong>
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/C5MWNtVy/CABOTUR-presente-en-el-lanzamiento-TIB-Bolivia-enero-2026.jpg" alt="CABOTUR presente en el lanzamiento TIB Bolivia enero 2026" loading="lazy" />
+                    <strong>CABOTUR presente en el lanzamiento TIB Bolivia enero 2026</strong>
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/fLfGYspG/Estrechando-lazos-a-nivel-internacional-junto-al-Viceministerio-de-Turismo-y-TIB-BOLIVIA.jpg" alt="Estrechando lazos a nivel internacional junto al Viceministerio de Turismo y TIB BOLIVIA" loading="lazy" />
+                    <strong>Estrechando lazos a nivel internacional junto al Viceministerio de Turismo y TIB BOLIVIA</strong>
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/RFLkwmyf/Feria-Internacional-de-Turismo-junio-2025.jpg" alt="Feria Internacional de Turismo junio 2025" loading="lazy" />
+                    <strong>Feria Internacional de Turismo junio 2025</strong>
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/MTmC1wgJ/Feria-Internacional-de-Turismo-TIB-BOLIVIA.jpg" alt="Feria Internacional de Turismo TIB Bolivia" loading="lazy" />
+                    <strong>Feria Internacional de Turismo TIB Bolivia</strong>
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/FRVM0v8j/Feria-Internacional-de-Turismo-TIB-Bolivia-2025-hotel-Calacoto.jpg" alt="Feria Internacional de Turismo TIB Bolivia 2025 - Hotel Calacoto" loading="lazy" />
+                    <strong>Feria Internacional de Turismo TIB Bolivia 2025 - Hotel Calacoto</strong>
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/nrV6k5fy/Firma-de-convenio-TIB-BOLIVIA-y-CANOTUR.jpg" alt="Firma de convenio TIB BOLIVIA y CANOTUR" loading="lazy" />
+                    <strong>Firma de convenio TIB BOLIVIA y CANOTUR</strong>
+                  </div>
+                  <div class="carousel-card" aria-hidden="true">
+                    <img src="https://i.postimg.cc/9MY6y2Kq/Inauguracion-Feria-Internacional-de-Turismo-TIB-BOLIVIA-2025.jpg" alt="Inauguración Feria Internacional de Turismo TIB Bolivia 2025" loading="lazy" />
+                    <strong>Inauguración Feria Internacional de Turismo TIB Bolivia 2025</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="memorias-content">
+        <div class="memorias-desc reveal">
+          <p>La primera edición de TIB Bolivia marcó un hito en el turismo nacional e internacional. Durante dos días intensos, empresas, operadores y profesionales del sector se reunieron en La Paz para crear alianzas, cerrar negocios y proyectar el futuro del turismo boliviano.</p>
+          <p>Cobertura en medios nacionales e internacionales, stands de alto nivel, conferencias y encuentros comerciales hicieron de esta primera edición un evento de referencia para la región andina.</p>
+          <!-- Reemplazar href con el enlace real de memorias cuando esté disponible -->
+          <a href="http://heyzine.com/flip-book/3d6cd7dc17.html" class="btn-primary" target="_blank">Ver Memoria 2025 →</a>
+        </div>
+        <div class="memorias-stats">
+        <div class="stat-card reveal">
+          <div class="stat-num">+3000</div>
+          <div class="stat-label">Visitantes</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-num">+75</div>
+          <div class="stat-label">Empresas Expositoras</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-num">+10</div>
+          <div class="stat-label">Países</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Días de Feria</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Reconocimientos</div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ NUEVA SECCIÓN: ALIANZAS ═══════════════════════════ -->
+  <!--
+  <section id="alianzas" class="section-alianzas has-bg">
+    <div class="section-bg" data-bg="alianzas">
+      <img src="contenido/TIB-img-paisajes/jovanel-bolivia-2533226.webp" alt="" loading="lazy" />
+      <div class="section-bg-overlay"></div>
+    </div>
+    <div class="alianzas-inner">
+      <div class="section-intro reveal">
+        <div class="section-tag-v">ALIANZAS ESTRATÉGICAS</div>
+        <h2 class="section-h2">Nuestros Aliados</h2>
+        <p class="section-tag-v">TIB Bolivia cuenta con el respaldo de organizaciones líderes del turismo nacional e internacional. Próximamente más aliados se suman a esta plataforma.</p>
+      </div>
+        Cada alianza-card tiene <img> con src vacío + fallback de iniciales.
+        Cuando llegue el logo: agregar URL en src=""
+      <div class="alianzas-grid">
+        <div class="alianza-card real reveal">
+          <div class="alianza-logo-wrap">
+            <img src="contenido\TIB-Logos\tourism and society tink tank.png" alt="Tourism and Society Tink Tank" data-logo="ali-tourism-and-society-tink-tank" />
+            <span class="alianza-initials">TSTT</span>
+          </div>
+          <span class="alianza-name">Tourism and Society Tink Tank</span>
+        </div>
+        <div class="alianza-card real reveal">
+          <div class="alianza-logo-wrap">
+            <img src="contenido\TIB-Logos\BLACK BULLS.png" alt="Black Bulls" data-logo="ali-black-bulls" />
+            <span class="alianza-initials">BB</span>
+          </div>
+          <span class="alianza-name">Black Bulls</span>
+        </div>
+        <div class="alianza-card real reveal">
+          <div class="alianza-logo-wrap">
+            <img src="contenido\TIB-Logos\CANOTUR.png" alt="Canotur" data-logo="ali-canotur" />
+            <span class="alianza-initials">CAN</span>
+          </div>
+          <span class="alianza-name">Canotur</span>
+        </div>
+        <div class="alianza-card real reveal">
+          <div class="alianza-logo-wrap">
+            <img src="contenido\TIB-Logos\CATOLICA ESCUDO.png" alt="Universidad Católica" data-logo="ali-catolica" />
+            <span class="alianza-initials">CATO</span>
+          </div>
+          <span class="alianza-name">Universidad Católica</span>
+        </div>
+        <div class="alianza-card real reveal">
+          <div class="alianza-logo-wrap">
+            <img src="contenido\TIB-Logos\COLPROTUR LP.png" alt="Colegio de Profesionales del Turismo" data-logo="ali-colprotur" />
+            <span class="alianza-initials">COLPROTUR</span>
+          </div>
+          <span class="alianza-name">Colegio de Profesionales del Turismo</span>
+        </div>
+        <div class="alianza-card real reveal">
+          <div class="alianza-logo-wrap">
+            <img src="contenido\TIB-Logos\LasTorresMall.png" alt="Las Torres Mall" data-logo="ali-las-torres" />
+            <span class="alianza-initials">LTM</span>
+          </div>
+          <span class="alianza-name">Las Torres Mall</span>
+        </div>
+        <div class="alianza-card real reveal">
+          <div class="alianza-logo-wrap">
+            <img src="contenido\TIB-Logos\TRAVEL.png" alt="Travel" data-logo="ali-travel" />
+            <span class="alianza-initials">TRAVEL</span>
+          </div>
+          <span class="alianza-name">Travel</span>
+        </div>
+        <div class="alianza-card real reveal">
+          <div class="alianza-logo-wrap">
+            <img src="contenido\TIB-Logos\CABOTUR.png" alt="CABOTUR" data-logo="ali-cabotur" />
+            <span class="alianza-initials">CABO</span>
+          </div>
+          <span class="alianza-name">CABOTUR</span>
+        </div>
+                      Tarjetas ↓ de aliados pendientes cambiar pending por real cuado coloques aliados 
+        <div class="alianza-card pending reveal">
+          <span class="alianza-pending-txt">Próximamente</span>
+        </div>
+        <div class="alianza-card pending reveal">
+          <span class="alianza-pending-txt">Próximamente</span>
+        </div>
+      </div>
+
+      <div class="alianzas-cta reveal">
+        <p>¿Tu organización quiere ser aliada estratégica de TIB Bolivia 2026?</p>
+        <a href="#contacto" class="btn-ghost" data-cform="general">Contáctanos</a>
+      </div>
+    </div>
+  </section>
+  -->
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       FASE 1: NUEVA SECCIÓN — ACTIVIDADES / EVENTOS
+       ───────────────────────────────────────────────────────────────────────────
+       Sección incorporada según propuesta de contenido y diseño TIB Bolivia 2026.
+       Contiene un sistema de DOS SUBPESTAÑAS independientes:
+         · EVENTOS TIB  → Fase 2: inauguraciones, embajadora, foro, taller
+         · FERIA TIB    → Fase 3: lanzamiento previo + jornadas 22, 23 y 24 oct.
+       El contenido de cada panel se implementará en las fases siguientes.
+       No mezclar contenido ni galerías entre ambas subpestañas.
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="actividades" class="section-actividades has-bg">
+
+    <!-- ── Fondo de imagen reservado ───────────────────────────────────────────
+         IMAGEN PENDIENTE: fotografía panorámica de actividades/eventos TIB Bolivia.
+         Cuando se disponga del material, agregar:
+           <img src="contenido/TIB-img-paisajes/[foto-actividades].webp" alt="" loading="lazy" />
+         justo debajo de este comentario, antes de section-bg-overlay.
+    ──────────────────────────────────────────────────────────────────────────── -->
+    <div class="section-bg" data-bg="actividades">
+      <!-- IMAGEN PENDIENTE (ver comentario arriba) -->
+      <div class="section-bg-overlay"></div>
+    </div>
+
+    <div class="actividades-inner">
+
+      <!-- ── Encabezado de la sección ─────────────────────────────────────── -->
+      <div class="section-intro reveal">
+        <div class="section-tag-v">ACTIVIDADES · EVENTOS</div>
+        <h2 class="section-h2">Actividades &amp; Eventos TIB Bolivia 2026</h2>
+        <p class="section-desc">
+          Conoce todo lo que acontece alrededor de TIB Bolivia:
+          inauguraciones, encuentros, feria internacional y más.
+        </p>
+      </div>
+
+      <!-- ═══ BARRA DE SUBPESTAÑAS ══════════════════════════════════════════
+           Dos botones que alternan entre los paneles EVENTOS TIB y FERIA TIB.
+           La lógica de cambio está en script.js (initEventsTabs).
+           Atributos ARIA para accesibilidad de teclado y lectores de pantalla.
+      ══════════════════════════════════════════════════════════════════════ -->
+      <div class="events-tabs" role="tablist" aria-label="Secciones de Actividades TIB Bolivia">
+        <button
+          class="etab active"
+          id="etab-btn-eventos"
+          role="tab"
+          aria-selected="true"
+          aria-controls="etab-eventos"
+          data-etab="eventos">
+          Eventos TIB
+        </button>
+        <button
+          class="etab"
+          id="etab-btn-feria"
+          role="tab"
+          aria-selected="false"
+          aria-controls="etab-feria"
+          data-etab="feria">
+          Feria TIB
+        </button>
+      </div>
+
+      <!-- ═══ PANEL 1: EVENTOS TIB (activo por defecto) ═════════════════════
+           Contendrá: Cabina Revista Turística, Embajadora del Turismo,
+           Primer Foro Internacional, Taller "Mejores ciudades" y
+           conferencias de prensa relacionadas.
+           → Contenido completo: FASE 2
+      ══════════════════════════════════════════════════════════════════════ -->
+      <!-- ═══ PANEL 1: EVENTOS TIB (activo por defecto) ═════════════════════
+           FASE 2: ESTRUCTURA Y CONTENIDO EDITORIAL DE EVENTOS INSTITUCIONALES
+           Contiene:
+             · 2.1 Encabezado editorial de la subpestaña
+             · 2.2 Evento 1: Cabina de Revista Turística (10 mar)
+             · 2.3 Evento 2: Embajadora del Turismo (27 ago)
+                 - 2.3.1 Actividades previas: Conferencia de prensa (9 jul) & NAVTUR (23 ago)
+             · 2.4 Evento 3: Primer Foro Internacional de Turismo (15 sep)
+             · 2.5 Evento 4: Taller "Mejores ciudades, mejor Bolivia" (16 sep)
+             · 2.6 Actividad previa conjunta: Conferencia Foro y Taller (14 sep)
+           Nota: Todos los espacios fotográficos cuentan con contenedores listos
+           para recibir las imágenes oficiales una vez sean provistas.
+      ══════════════════════════════════════════════════════════════════════ -->
+      <div class="etab-panel active" id="etab-eventos" role="tabpanel" aria-labelledby="etab-btn-eventos">
+
+        <!-- ── 2.1 ENCABEZADO DE EVENTOS TIB ─────────────────────────────────
+             Fotografía panorámica con capa de contraste y texto institucional
+        ────────────────────────────────────────────────────────────────────── -->
+        <div class="events-hero reveal">
+          <!-- ESPACIO RESERVADO PARA FOTO PANORÁMICA DE ENCUENTROS/ACTIVIDADES -->
+          <div class="events-hero-bg">
+            <div class="img-placeholder-hero">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Fotografía panorámica institucional · Pendiente de archivo oficial</span>
+            </div>
+            <div class="events-hero-overlay"></div>
+          </div>
+          <div class="events-hero-content">
+            <span class="events-hero-badge">Agenda Institucional</span>
+            <h3 class="events-hero-title">EVENTOS TIB</h3>
+            <p class="events-hero-desc">
+              Conoce las actividades, encuentros y experiencias que forman parte de TIB Bolivia. A través de diferentes espacios de promoción, formación e intercambio, impulsamos iniciativas que fortalecen el turismo, generan conexiones y promueven el desarrollo de nuestro país.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── LISTADO CRONOLÓGICO DE EVENTOS ──────────────────────────────── -->
+        <div class="events-timeline">
+
+          <!-- ═══════════════════════════════════════════════════════════════════
+               2.2 EVENTO 1: Cabina de Revista Turística
+               Fecha: 10 de marzo de 2026 | Hora: 12:30 p. m. | Lugar: Torres Mall
+          ══════════════════════════════════════════════════════════════════════ -->
+          <article class="event-card reveal" id="evento-cabina">
+            <div class="event-card-grid">
+              <!-- Columna izquierda: Imagen principal (38-42% ancho) -->
+              <div class="event-media">
+                <!-- ESPACIO RESERVADO: Reemplazar por <img> horizontal de la cabina -->
+                <div class="img-placeholder-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  <span>Fotografía horizontal de la cabina</span>
+                  <small>Pendiente de archivo oficial</small>
+                </div>
+              </div>
+
+              <!-- Columna derecha: Título, metadatos y descripción -->
+              <div class="event-body">
+                <span class="event-category">Inauguración</span>
+                <h4 class="event-title">Inauguración de la primera cabina de Revista Turística</h4>
+                
+                <div class="event-meta">
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>10 de marzo de 2026</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>12:30 p. m.</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Torres Mall</span>
+                  </div>
+                </div>
+
+                <div class="event-desc">
+                  <p>
+                    TIB Bolivia llevó a cabo la inauguración de la primera cabina de Revista Turística en Torres Mall, un espacio destinado a promover y difundir el potencial turístico de Bolivia.
+                  </p>
+                  <p>
+                    Esta iniciativa permite presentar, mediante imágenes e información, la riqueza cultural, patrimonial y turística de las diferentes regiones del país. Asimismo, busca brindar orientación e información responsable y segura a las personas interesadas en conocer los destinos y atractivos nacionales.
+                  </p>
+                </div>
+
+                <div class="event-actions">
+                  <button type="button" class="btn-event-gallery" data-gallery="cabina">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    Ver galería (4–5 fotografías)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Miniaturas complementarias reservadas (galería / visor) -->
+            <div class="event-thumbs-wrap">
+              <span class="thumbs-label">Material fotográfico complementario</span>
+              <div class="event-thumbs-grid">
+                <div class="thumb-placeholder"><span>Foto 1</span></div>
+                <div class="thumb-placeholder"><span>Foto 2</span></div>
+                <div class="thumb-placeholder"><span>Foto 3</span></div>
+                <div class="thumb-placeholder"><span>Foto 4</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══════════════════════════════════════════════════════════════════
+               2.3 EVENTO 2: Elección de la Embajadora del Turismo TIB Bolivia 2026
+               Fecha: 27 de agosto de 2026 | Hora: 19:00 | Lugar: Torres Mall
+               Ganadora: Evelyn Aguirre
+          ══════════════════════════════════════════════════════════════════════ -->
+          <article class="event-card reveal" id="evento-embajadora">
+            <div class="event-card-grid">
+              <!-- Columna izquierda: Imagen principal -->
+              <div class="event-media">
+                <!-- ESPACIO RESERVADO: Reemplazar por fotografía de Evelyn Aguirre en la gala -->
+                <div class="img-placeholder-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                  </svg>
+                  <span>Fotografía de Evelyn Aguirre · Gala Final</span>
+                  <small>Pendiente de archivo oficial</small>
+                </div>
+              </div>
+
+              <!-- Columna derecha: Título, ganadora destacada y texto -->
+              <div class="event-body">
+                <span class="event-category">Gala Final</span>
+                <h4 class="event-title">Elección de la Embajadora del Turismo TIB Bolivia 2026</h4>
+                
+                <div class="event-meta">
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>27 de agosto de 2026</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>19:00</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Torres Mall</span>
+                  </div>
+                </div>
+
+                <!-- Distinción de la ganadora sin convertir en afiche -->
+                <div class="event-award-box">
+                  <span class="award-label">Reconocimiento Oficial</span>
+                  <div class="award-winner">
+                    <strong class="winner-name">Evelyn Aguirre</strong>
+                    <span class="winner-title">Embajadora del Turismo TIB Bolivia 2026</span>
+                  </div>
+                </div>
+
+                <div class="event-desc">
+                  <p>
+                    TIB Bolivia realizó la gala final de elección de la Embajadora del Turismo 2026, un encuentro que destacó la promoción turística, la identidad cultural y el compromiso con la difusión de los atractivos de nuestro país.
+                  </p>
+                  <p>
+                    Durante esta celebración se llevó a cabo la elección de Evelyn Aguirre como Embajadora del Turismo TIB Bolivia 2026, quien asumió el reconocimiento de representar y promover la riqueza turística y cultural de Bolivia.
+                  </p>
+                </div>
+
+                <div class="event-actions">
+                  <button type="button" class="btn-event-gallery" data-gallery="embajadora">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    Ver galería de la gala y coronación
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Galería de imágenes independiente debajo del texto -->
+            <div class="event-thumbs-wrap">
+              <span class="thumbs-label">Galería de la gala final, coronación y momentos representativos</span>
+              <div class="event-thumbs-grid">
+                <div class="thumb-placeholder"><span>Elección</span></div>
+                <div class="thumb-placeholder"><span>Coronación</span></div>
+                <div class="thumb-placeholder"><span>Momento 1</span></div>
+                <div class="thumb-placeholder"><span>Momento 2</span></div>
+              </div>
+            </div>
+
+            <!-- ── 2.3.1 ACTIVIDADES PREVIAS A LA ELECCIÓN ──────────────────────
+                 Apartado secundario claramente diferenciado de la gala final
+            ──────────────────────────────────────────────────────────────────── -->
+            <div class="event-subactivities">
+              <div class="subactivities-header">
+                <span class="subactivities-tag">Rumbo a la Gala</span>
+                <h5 class="subactivities-title">Actividades previas a la elección de la Embajadora</h5>
+              </div>
+
+              <div class="subactivities-grid">
+                <!-- A. Conferencia de prensa - Lanzamiento (Sin fotografías) -->
+                <div class="subactivity-card subactivity-text-only">
+                  <div class="subactivity-badge">Conferencia de Prensa</div>
+                  <h6 class="subactivity-h">Lanzamiento de la Embajadora del Turismo</h6>
+                  <div class="event-meta compact">
+                    <div class="event-meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                      <span>9 de julio de 2026</span>
+                    </div>
+                    <div class="event-meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <span>09:30 a. m.</span>
+                    </div>
+                    <div class="event-meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span>Casa de la Cultura, tercer piso</span>
+                    </div>
+                  </div>
+                  <p class="subactivity-p">
+                    “Como parte de las actividades previas a la elección de la Embajadora del Turismo TIB Bolivia 2026, se realizó una conferencia de prensa en la Casa de la Cultura, donde se presentó oficialmente esta iniciativa y se dieron a conocer los principales detalles de la elección y las actividades programadas.”
+                  </p>
+                  <span class="subactivity-note">Ficha informativa · Registro institucional</span>
+                </div>
+
+                <!-- B. Experiencia de viaje NAVTUR (Lago Titicaca) -->
+                <div class="subactivity-card">
+                  <div class="subactivity-media">
+                    <!-- ESPACIO RESERVADO: Fotografía de la experiencia en buque NAVTUR -->
+                    <div class="img-placeholder-sub">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1"/>
+                        <path d="M4 18L3 12h18l-1 6"/>
+                        <path d="M12 4v8"/>
+                      </svg>
+                      <span>Experiencia de navegación NAVTUR</span>
+                      <small>Fotografía del buque multipropósito</small>
+                    </div>
+                  </div>
+                  <div class="subactivity-info">
+                    <div class="subactivity-badge">Experiencia de Viaje</div>
+                    <h6 class="subactivity-h">Navegación por el lago Titicaca – NAVTUR</h6>
+                    <div class="event-meta compact">
+                      <div class="event-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <span>23 de agosto de 2026</span>
+                      </div>
+                      <div class="event-meta-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Lago Titicaca</span>
+                      </div>
+                    </div>
+                    <p class="subactivity-p">
+                      “Como parte de las actividades previas a la gala de elección de la Embajadora del Turismo, se desarrolló una experiencia de navegación por el lago Titicaca a bordo del buque multipropósito de NAVTUR. Esta actividad permitió vivir una experiencia vinculada al turismo lacustre y destacar el valor paisajístico, cultural y turístico de uno de los destinos más representativos de Bolivia.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══════════════════════════════════════════════════════════════════
+               2.4 EVENTO 3: Primer Foro Internacional de Turismo
+               Fecha: 15 de septiembre de 2026 | Hora: 09:00 a. m. | Lugar: Torres Mall
+               Tema: Bolivia Inteligente y Sostenible: Rediseñando el destino desde la gobernanza
+               Expositor y Moderador: Felipe Vera Omar Soto, de Chile
+          ══════════════════════════════════════════════════════════════════════ -->
+          <article class="event-card reveal" id="evento-foro">
+            <div class="event-card-grid">
+              <!-- Columna izquierda: Imagen horizontal del expositor -->
+              <div class="event-media">
+                <!-- ESPACIO RESERVADO: Reemplazar por fotografía de Felipe Vera Omar Soto -->
+                <div class="img-placeholder-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                  <span>Fotografía horizontal del expositor</span>
+                  <small>Felipe Vera Omar Soto (Chile)</small>
+                </div>
+              </div>
+
+              <!-- Columna derecha: Título, tema, metadatos y texto -->
+              <div class="event-body">
+                <span class="event-category">Foro Internacional</span>
+                <h4 class="event-title">Primer Foro Internacional de Turismo</h4>
+                
+                <!-- Tema del foro con menor jerarquía tipográfica -->
+                <div class="event-topic">
+                  <span class="topic-tag">Tema Central</span>
+                  <p class="topic-title">“Bolivia Inteligente y Sostenible: Rediseñando el destino desde la gobernanza”</p>
+                </div>
+
+                <div class="event-meta">
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>15 de septiembre de 2026</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>09:00 a. m.</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Torres Mall</span>
+                  </div>
+                </div>
+
+                <div class="event-speaker-badge">
+                  <span class="speaker-role">Expositor y Moderador</span>
+                  <span class="speaker-name">Felipe Vera Omar Soto (Chile)</span>
+                </div>
+
+                <div class="event-desc">
+                  <p>
+                    “El Primer Foro Internacional de Turismo se desarrolló como un espacio de análisis, intercambio de conocimientos y reflexión sobre los desafíos y oportunidades del sector turístico.
+                  </p>
+                  <p>
+                    Bajo el tema <em>“Bolivia Inteligente y Sostenible: rediseñando el destino y la gobernanza”</em>, el encuentro abordó la importancia de impulsar nuevas perspectivas para el desarrollo turístico, fortalecer la gestión de los destinos y promover modelos de turismo más sostenibles e innovadores.
+                  </p>
+                  <p>
+                    El foro contó con la participación de Felipe Vera Omar Soto, de Chile, quien estuvo a cargo de conducir y desarrollar este espacio de intercambio.”
+                  </p>
+                </div>
+
+                <div class="event-actions">
+                  <button type="button" class="btn-event-gallery" data-gallery="foro">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    Ver galería del foro y público
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Miniaturas inferiores -->
+            <div class="event-thumbs-wrap">
+              <span class="thumbs-label">Desarrollo del foro, expositor, público y espacio del encuentro</span>
+              <div class="event-thumbs-grid">
+                <div class="thumb-placeholder"><span>Expositor</span></div>
+                <div class="thumb-placeholder"><span>Público</span></div>
+                <div class="thumb-placeholder"><span>Panel</span></div>
+                <div class="thumb-placeholder"><span>Espacio</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══════════════════════════════════════════════════════════════════
+               2.5 EVENTO 4: Taller “Mejores ciudades, mejor Bolivia”
+               Fecha: 16 de septiembre de 2026 | Hora: 09:00 a. m. | Lugar: Torres Mall
+               Facilitador: Felipe Vera Omar Soto
+          ══════════════════════════════════════════════════════════════════════ -->
+          <article class="event-card reveal" id="evento-taller">
+            <div class="event-card-grid">
+              <!-- Columna izquierda: Imagen principal del taller -->
+              <div class="event-media">
+                <!-- ESPACIO RESERVADO: Fotografía principal del taller -->
+                <div class="img-placeholder-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                  </svg>
+                  <span>Fotografía del taller de formación</span>
+                  <small>Pendiente de archivo oficial</small>
+                </div>
+              </div>
+
+              <!-- Columna derecha: Título, facilitador, metadatos y texto -->
+              <div class="event-body">
+                <span class="event-category">Taller de Capacitación</span>
+                <h4 class="event-title">Taller “Mejores ciudades, mejor Bolivia”</h4>
+                
+                <div class="event-meta">
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>16 de septiembre de 2026</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>09:00 a. m.</span>
+                  </div>
+                  <div class="event-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Torres Mall</span>
+                  </div>
+                </div>
+
+                <div class="event-speaker-badge">
+                  <span class="speaker-role">Facilitador</span>
+                  <span class="speaker-name">Felipe Vera Omar Soto</span>
+                </div>
+
+                <div class="event-desc">
+                  <p>
+                    “Como parte de las actividades de formación e intercambio impulsadas por TIB Bolivia, se desarrolló el taller <strong>“Mejores ciudades, mejor Bolivia”</strong>, un espacio orientado a reflexionar sobre la importancia de construir ciudades con mejores condiciones para sus habitantes y visitantes.
+                  </p>
+                  <p>
+                    La actividad estuvo dirigida por Felipe Vera Omar Soto y permitió abordar la relación entre el desarrollo urbano, la planificación y la construcción de entornos que contribuyan al fortalecimiento del turismo y al desarrollo sostenible.”
+                  </p>
+                </div>
+
+                <div class="event-actions">
+                  <button type="button" class="btn-event-gallery" data-gallery="taller">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    Ver galería del taller
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Miniaturas inferiores -->
+            <div class="event-thumbs-wrap">
+              <span class="thumbs-label">Imágenes de la exposición, participantes y desarrollo del taller</span>
+              <div class="event-thumbs-grid">
+                <div class="thumb-placeholder"><span>Taller 1</span></div>
+                <div class="thumb-placeholder"><span>Taller 2</span></div>
+                <div class="thumb-placeholder"><span>Participación</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ═══════════════════════════════════════════════════════════════════
+               2.6 ACTIVIDAD PREVIA CONJUNTA AL FORO Y AL TALLER
+               Conferencia de prensa única (NO DUPLICAR según indicación del PDF)
+               Fecha: 14 de septiembre de 2026 | Hora: 10:00 a. m. | CPEM La Paz
+          ══════════════════════════════════════════════════════════════════════ -->
+          <div class="event-joint-conference reveal">
+            <div class="joint-conf-inner">
+              <div class="joint-conf-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z"/><polyline points="17 6 17 10 21 10"/></svg>
+                <span>Actividad previa conjunta · Foro y Taller</span>
+              </div>
+              <h5 class="joint-conf-title">Conferencia de Prensa – Presentación del Foro y Taller</h5>
+              
+              <div class="event-meta compact">
+                <div class="event-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span>14 de septiembre de 2026</span>
+                </div>
+                <div class="event-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>10:00 a. m.</span>
+                </div>
+                <div class="event-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>Centro de Promoción Económica Municipal (CPEM), ciudad de La Paz</span>
+                </div>
+              </div>
+
+              <p class="joint-conf-desc">
+                “En el marco de la realización del Primer Foro Internacional de Turismo y el taller “Mejores ciudades, mejor Bolivia”, se llevó a cabo una conferencia de prensa en el Centro de Promoción Económica Municipal (CPEM), donde se dieron a conocer ambas actividades, sus objetivos y la importancia de generar espacios de formación e intercambio para el fortalecimiento del sector turístico.”
+              </p>
+              <div class="joint-conf-connectors">
+                <span class="jc-badge">Vinculado a: 15 Sep · Foro Internacional</span>
+                <span class="jc-badge">Vinculado a: 16 Sep · Taller "Mejores ciudades"</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /events-timeline -->
+
+      </div><!-- /etab-eventos -->
+
+      <!-- ═══ PANEL 2: FERIA TIB (oculto por defecto) ══════════════════════
+           Contendrá: lanzamiento oficial (19 ago), tarjetas de navegación
+           por jornada (22/23/24 oct) y el detalle de cada día:
+           inauguración, Rueda B2B, ILLARI, clausura y desfile cultural.
+           → Contenido completo: FASE 3
+      ══════════════════════════════════════════════════════════════════════ -->
+      <!-- ═══ PANEL 2: FERIA TIB ══════════════════════════════════════════
+           FASE 3: PORTADA DE FERIA, LANZAMIENTO Y JORNADAS 22, 23 Y 24 OCT
+           Contiene:
+             · 3.1 Portada visual de la Feria Internacional + 3 tarjetas de navegación
+             · 3.2 Actividad previa: Lanzamiento oficial y firma de pergamino (19 ago)
+             · 4.1 Día 1: 22 de octubre (Inauguración, Rueda B2B, Feria)
+             · 4.2 Día 2: 23 de octubre (Feria Internacional de Negocios)
+             · 4.3 Día 3: 24 de octubre (Festival ILLARI, Feria paralela, Clausura y Desfile)
+      ══════════════════════════════════════════════════════════════════════ -->
+      <div class="etab-panel" id="etab-feria" role="tabpanel" aria-labelledby="etab-btn-feria">
+
+        <!-- ── 3.1 PORTADA DE FERIA TIB ──────────────────────────────────────
+             Portada panorámica de mayor protagonismo con fechas y texto
+        ────────────────────────────────────────────────────────────────────── -->
+        <div class="feria-hero reveal">
+          <!-- ESPACIO RESERVADO PARA FOTO PANORÁMICA DE LA FERIA
+               NOTA: Según el documento de especificación, aún no se cuenta con
+               fotografías de alta calidad de la feria. Se mantendrá el placeholder
+               hasta disponer del archivo oficial. -->
+          <div class="feria-hero-bg">
+            <div class="img-placeholder-hero feria-ph-hero">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <span>Fotografía panorámica oficial de la feria</span>
+              <small>Pendiente de archivo oficial en alta resolución</small>
+            </div>
+            <div class="feria-hero-overlay"></div>
+          </div>
+
+          <div class="feria-hero-content">
+            <div class="feria-edition-badge">TIB BOLIVIA 2026 · SEGUNDA VERSIÓN</div>
+            <h3 class="feria-hero-title">FERIA INTERNACIONAL DE TURISMO Y NEGOCIOS</h3>
+            
+            <!-- Fechas destacadas de forma muy visible -->
+            <div class="feria-dates-banner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>22 · 23 · 24 de Octubre de 2026</span>
+              <span class="fdb-dot">·</span>
+              <span>La Paz, Bolivia</span>
+            </div>
+
+            <p class="feria-hero-desc">
+              TIB Bolivia 2026 reunió a empresas, instituciones, emprendimientos y representantes del sector turístico y empresarial en un espacio destinado a generar oportunidades de negocio, promover destinos, presentar servicios y fortalecer las conexiones comerciales.
+            </p>
+            <p class="feria-hero-subdesc">
+              Durante tres jornadas, la feria desarrolló actividades empresariales, turísticas, gastronómicas y culturales, consolidándose como un espacio de encuentro y promoción para los diferentes actores de la cadena de valor del turismo.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── TARJETAS INTERACTIVAS DE NAVEGACIÓN POR FECHAS ────────────────
+             Tres tarjetas que desplazan suavemente (smooth scroll) al bloque
+             correspondiente dentro de esta misma subpestaña (anclas internas).
+        ────────────────────────────────────────────────────────────────────── -->
+        <div class="feria-nav-cards reveal">
+          <div class="nav-cards-label">Explora la feria día a día</div>
+          <div class="nav-cards-grid">
+            <!-- Tarjeta 22 OCT -->
+            <a href="#dia-22" class="date-card">
+              <div class="dc-media">
+                <div class="dc-ph">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                  <span>Corte de Cinta &amp; Rueda B2B</span>
+                </div>
+              </div>
+              <div class="dc-info">
+                <span class="dc-date">22 OCT</span>
+                <strong class="dc-title">Inauguración y Rueda B2B</strong>
+                <span class="dc-arrow">Ver jornada →</span>
+              </div>
+            </a>
+
+            <!-- Tarjeta 23 OCT -->
+            <a href="#dia-23" class="date-card">
+              <div class="dc-media">
+                <div class="dc-ph">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+                  <span>Exposición &amp; Conexiones</span>
+                </div>
+              </div>
+              <div class="dc-info">
+                <span class="dc-date">23 OCT</span>
+                <strong class="dc-title">Feria Internacional de Negocios</strong>
+                <span class="dc-arrow">Ver jornada →</span>
+              </div>
+            </a>
+
+            <!-- Tarjeta 24 OCT -->
+            <a href="#dia-24" class="date-card">
+              <div class="dc-media">
+                <div class="dc-ph">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <span>Gastronomía &amp; Desfile Cultural</span>
+                </div>
+              </div>
+              <div class="dc-info">
+                <span class="dc-date">24 OCT</span>
+                <strong class="dc-title">Feria, ILLARI y Clausura</strong>
+                <span class="dc-arrow">Ver jornada →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ── 3.2 ACTIVIDAD PREVIA: LANZAMIENTO OFICIAL ─────────────────────
+             Bloque diferenciado como actividad previa a las tres jornadas
+        ────────────────────────────────────────────────────────────────────── -->
+        <section class="prior-launch-wrap reveal">
+          <div class="prior-launch-card">
+            <div class="prior-launch-header">
+              <span class="prior-launch-tag">Actividad Previa Institucional</span>
+              <h4 class="prior-launch-title">Lanzamiento Oficial de TIB Bolivia 2026</h4>
+              <p class="prior-launch-subtitle">Firma del pergamino simbólico de la segunda versión</p>
+            </div>
+
+            <div class="event-meta compact">
+              <div class="event-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>19 de agosto de 2026</span>
+              </div>
+              <div class="event-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>10:00 a. m.</span>
+              </div>
+              <div class="event-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Torres Mall</span>
+              </div>
+            </div>
+
+            <div class="prior-launch-grid">
+              <div class="prior-launch-media">
+                <!-- ESPACIO RESERVADO: Fotografía principal del lanzamiento o firma del pergamino -->
+                <div class="img-placeholder-card">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                  <span>Fotografía del lanzamiento oficial / Firma del pergamino</span>
+                  <small>Pendiente de archivo fotográfico</small>
+                </div>
+              </div>
+
+              <div class="prior-launch-text">
+                <p>
+                  “TIB Bolivia realizó el lanzamiento oficial de su segunda versión, presentando una nueva edición de la Feria Internacional de Turismo y Negocios 2026.
+                </p>
+                <p>
+                  El encuentro se llevó a cabo en Torres Mall y estuvo acompañado por la firma del pergamino TIB Bolivia 2026, un acto simbólico que marcó el inicio de las actividades de esta nueva edición y reafirmó el compromiso de impulsar espacios de encuentro, promoción y conexión entre los diferentes actores del sector turístico y empresarial.”
+                </p>
+                <div class="event-actions">
+                  <button type="button" class="btn-event-gallery" data-gallery="lanzamiento">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    Ver galería del lanzamiento
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-thumbs-wrap">
+              <span class="thumbs-label">Galería complementaria del lanzamiento y firma del pergamino</span>
+              <div class="event-thumbs-grid">
+                <div class="thumb-placeholder"><span>Pergamino</span></div>
+                <div class="thumb-placeholder"><span>Autoridades</span></div>
+                <div class="thumb-placeholder"><span>Prensa</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             4. DESARROLLO DE LA FERIA POR JORNADAS (22, 23 Y 24 OCTUBRE)
+        ══════════════════════════════════════════════════════════════════════ -->
+        <div class="feria-days-container">
+
+          <!-- ── 4.1 DÍA 1: 22 DE OCTUBRE DE 2026 ──────────────────────────────
+               Ancla interna: #dia-22
+               Actividades: Inauguración oficial, Rueda B2B y Feria Internacional
+          ──────────────────────────────────────────────────────────────────── -->
+          <section class="day-section reveal" id="dia-22">
+            <header class="day-header">
+              <div class="day-badge-wrap">
+                <span class="day-tag">Jornada 01</span>
+                <h4 class="day-title">22 DE OCTUBRE DE 2026</h4>
+              </div>
+              <div class="day-places">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Torres Mall y Casa Goytia, La Paz</span>
+              </div>
+            </header>
+
+            <div class="day-intro-text">
+              <p>
+                La primera jornada de TIB Bolivia 2026 comenzó con la inauguración oficial de la Feria Internacional de Turismo y Negocios, acompañada del acto protocolar de corte de cinta, que marcó el inicio de esta segunda versión.
+              </p>
+              <p>
+                Posteriormente, se desarrolló la Rueda de Negocios B2B, un espacio de encuentro entre empresas y representantes del sector turístico y empresarial, orientado a generar contactos, presentar propuestas comerciales, establecer relaciones estratégicas e identificar nuevas oportunidades de colaboración.
+              </p>
+              <p>
+                Durante la jornada también se desarrolló la Feria Internacional de Negocios, donde las empresas e instituciones participantes presentaron sus productos, servicios y propuestas al público visitante, generando un espacio de promoción, información e interacción comercial.
+              </p>
+            </div>
+
+            <!-- Tres módulos consecutivos organizados con títulos, textos y fotos propias -->
+            <div class="day-modules-grid">
+              
+              <!-- Módulo A: Inauguración oficial -->
+              <div class="day-module-card">
+                <div class="dm-media">
+                  <div class="img-placeholder-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/></svg>
+                    <span>Fotografía del corte de cinta</span>
+                    <small>Acto protocolar oficial</small>
+                  </div>
+                </div>
+                <div class="dm-content">
+                  <span class="dm-badge">Acto Protocolar</span>
+                  <h5 class="dm-title">Inauguración Oficial &amp; Corte de Cinta</h5>
+                  <p class="dm-desc">
+                    Acto solemne de apertura que marcó el inicio formal de la segunda versión de la feria, reuniendo a las principales autoridades del turismo nacional e invitados internacionales.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Módulo B: Rueda de Negocios B2B -->
+              <div class="day-module-card">
+                <div class="dm-media">
+                  <!-- AÚN NO HAY FOTOS según indicación del PDF -->
+                  <div class="img-placeholder-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    <span>Rueda de Negocios B2B</span>
+                    <small>Aún no se dispone de fotografías</small>
+                  </div>
+                </div>
+                <div class="dm-content">
+                  <span class="dm-badge">Encuentros Comerciales</span>
+                  <h5 class="dm-title">Rueda de Negocios B2B</h5>
+                  <p class="dm-desc">
+                    Encuentros bilaterales entre operadores, agencias mayoristas, hotelería y prestadores turísticos con el objetivo de sellar alianzas estratégicas y dinamizar acuerdos de comercialización.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Módulo C: Feria Internacional de Negocios -->
+              <div class="day-module-card">
+                <div class="dm-media">
+                  <!-- HAY POCAS FOTOS según indicación del PDF -->
+                  <div class="img-placeholder-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    <span>Stands y Expositores</span>
+                    <small>Material fotográfico en proceso</small>
+                  </div>
+                </div>
+                <div class="dm-content">
+                  <span class="dm-badge">Exhibición Comercial</span>
+                  <h5 class="dm-title">Feria Internacional de Negocios</h5>
+                  <p class="dm-desc">
+                    Apertura de los espacios de exposición para que empresas e instituciones presenten sus paquetes turísticos, ofertas y servicios ante el público visitante.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ── 4.2 DÍA 2: 23 DE OCTUBRE DE 2026 ──────────────────────────────
+               Ancla interna: #dia-23
+               Actividad principal: Feria Internacional de Negocios
+          ──────────────────────────────────────────────────────────────────── -->
+          <section class="day-section reveal" id="dia-23">
+            <header class="day-header">
+              <div class="day-badge-wrap">
+                <span class="day-tag">Jornada 02</span>
+                <h4 class="day-title">23 DE OCTUBRE DE 2026</h4>
+              </div>
+              <div class="day-places">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Torres Mall y Casa Goytia</span>
+              </div>
+            </header>
+
+            <div class="day-two-wrap">
+              <div class="day-two-grid">
+                <!-- Columna izquierda: Imagen principal horizontal -->
+                <div class="day-two-media">
+                  <div class="img-placeholder-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                    <span>Stands, expositores y visitantes</span>
+                    <small>Fotografía horizontal principal de la jornada</small>
+                  </div>
+                </div>
+
+                <!-- Columna derecha: Subtítulo y texto descriptivo -->
+                <div class="day-two-body">
+                  <span class="dm-badge">Actividad Principal</span>
+                  <h5 class="day-two-subtitle">Feria Internacional de Negocios</h5>
+                  
+                  <div class="event-desc">
+                    <p>
+                      “La segunda jornada de TIB Bolivia 2026 estuvo dedicada al desarrollo de la Feria Internacional de Negocios, donde las empresas e instituciones participantes continuaron presentando sus productos, servicios y propuestas comerciales.
+                    </p>
+                    <p>
+                      Durante esta jornada, los visitantes tuvieron la oportunidad de recorrer los diferentes stands, conocer nuevas alternativas, establecer contactos y obtener información directamente de las organizaciones participantes.
+                    </p>
+                    <p>
+                      La actividad permitió continuar fortaleciendo los espacios de promoción, intercambio y conexión entre los diferentes actores del sector turístico y empresarial.”
+                    </p>
+                  </div>
+
+                  <div class="event-actions">
+                    <button type="button" class="btn-event-gallery" data-gallery="dia-23">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                      Ver galería del 23 de octubre
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Galería o carrusel de imágenes adicionales -->
+              <div class="event-thumbs-wrap">
+                <span class="thumbs-label">Stands de empresas, participantes y visitantes recorriendo la feria</span>
+                <div class="event-thumbs-grid">
+                  <div class="thumb-placeholder"><span>Stand 1</span></div>
+                  <div class="thumb-placeholder"><span>Stand 2</span></div>
+                  <div class="thumb-placeholder"><span>Visitantes</span></div>
+                  <div class="thumb-placeholder"><span>Expositor</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ── 4.3 DÍA 3: 24 DE OCTUBRE DE 2026 ──────────────────────────────
+               Ancla interna: #dia-24
+               Composición especial en 2 espacios:
+                 · A. Festival Gastronómico ILLARI (Casa Goitia)
+                 · B. Feria Internacional de Negocios (Torres Mall - paralela)
+                 · C. Clausura y Desfile Cultural (Torres Mall)
+          ──────────────────────────────────────────────────────────────────── -->
+          <section class="day-section reveal" id="dia-24">
+            <header class="day-header">
+              <div class="day-badge-wrap">
+                <span class="day-tag">Jornada 03 · Cierre</span>
+                <h4 class="day-title">24 DE OCTUBRE DE 2026</h4>
+              </div>
+              <div class="day-places">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Actividades paralelas en Casa Goitia y Torres Mall</span>
+              </div>
+            </header>
+
+            <div class="day-three-stack">
+
+              <!-- Bloque A: Festival Gastronómico Internacional ILLARI -->
+              <div class="day-three-block illari-block">
+                <div class="block-location-pill">
+                  <span class="blp-loc">Casa Goitia (frente a Torres Mall, Av. Arce)</span>
+                  <span class="blp-time">Inicio: 09:00 a. m.</span>
+                </div>
+                
+                <span class="dm-badge">Gastronomía y Cultura</span>
+                <h5 class="day-three-h">Primer Festival Gastronómico Internacional ILLARI</h5>
+
+                <div class="illari-grid">
+                  <!-- Imagen gastronómica amplia -->
+                  <div class="illari-media">
+                    <div class="img-placeholder-card illari-ph">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+                      </svg>
+                      <span>Fotografía gastronómica amplia · Festival ILLARI</span>
+                      <small>Sabores, productos y degustaciones</small>
+                    </div>
+                  </div>
+
+                  <div class="illari-body">
+                    <p>
+                      “Como parte de las actividades de TIB Bolivia 2026, se desarrolló el primer Festival Gastronómico Internacional ILLARI, un espacio dedicado a la promoción de la gastronomía y la diversidad culinaria.
+                    </p>
+                    <p>
+                      El festival contó con la participación de diferentes empresas e instituciones gastronómicas, que tuvieron la oportunidad de presentar, ofrecer y comercializar sus productos al público visitante.
+                    </p>
+                    <p>
+                      Esta actividad permitió destacar la riqueza gastronómica nacional e internacional y generar un espacio de encuentro entre productores, emprendimientos, instituciones y visitantes.”
+                    </p>
+                    <div class="event-actions">
+                      <button type="button" class="btn-event-gallery" data-gallery="illari">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        Ver mosaico de fotos ILLARI
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Galería tipo mosaico para ILLARI -->
+                <div class="event-thumbs-wrap">
+                  <span class="thumbs-label">Mosaico: stands gastronómicos, preparaciones, expositores y degustaciones</span>
+                  <div class="event-thumbs-grid illari-mosaic">
+                    <div class="thumb-placeholder"><span>Degustación</span></div>
+                    <div class="thumb-placeholder"><span>Platos típicos</span></div>
+                    <div class="thumb-placeholder"><span>Expositores</span></div>
+                    <div class="thumb-placeholder"><span>Ambiente</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bloque B: Feria Internacional de Negocios (Paralela, en Torres Mall) -->
+              <div class="day-three-block parallel-block">
+                <div class="block-location-pill parallel-pill">
+                  <span class="blp-loc">Torres Mall · Actividad Paralela</span>
+                  <span class="blp-time">24 de octubre de 2026</span>
+                </div>
+
+                <div class="parallel-grid">
+                  <div class="parallel-text">
+                    <span class="dm-badge">Exposición Continua</span>
+                    <h5 class="day-three-h">Feria Internacional de Negocios en Torres Mall</h5>
+                    <p>
+                      “De manera paralela al Festival Gastronómico Internacional ILLARI, continuó el desarrollo de la Feria Internacional de Negocios en las instalaciones de Torres Mall.
+                    </p>
+                    <p>
+                      Durante esta jornada, las empresas e instituciones participantes mantuvieron sus espacios de exposición, permitiendo que los visitantes recorrieran los stands, conocieran sus propuestas, solicitaran información y accedieran a los diferentes productos y servicios ofrecidos.”
+                    </p>
+                  </div>
+                  <div class="parallel-media">
+                    <!-- AÚN NO HAY FOTOS según indicación del PDF -->
+                    <div class="img-placeholder-card">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18"/></svg>
+                      <span>Stands y empresas en Torres Mall</span>
+                      <small>Material fotográfico en proceso</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bloque C: Clausura de la feria y Desfile Cultural -->
+              <div class="day-three-block clausura-block">
+                <div class="block-location-pill clausura-pill">
+                  <span class="blp-loc">Torres Mall · Escenario Principal</span>
+                  <span class="blp-time">18:30 · Acto de Cierre Oficial</span>
+                </div>
+
+                <span class="dm-badge clausura-badge">Cierre de Edición</span>
+                <h5 class="day-three-h">Clausura de la Feria &amp; Desfile Cultural</h5>
+
+                <div class="clausura-grid">
+                  <div class="clausura-media">
+                    <!-- ESPACIO RESERVADO: Fotografía principal del desfile cultural -->
+                    <div class="img-placeholder-card clausura-ph">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <polygon points="5 3 19 12 5 21 5 3"/>
+                      </svg>
+                      <span>Fotografía principal del desfile cultural</span>
+                      <small>Expresiones artísticas y folclóricas</small>
+                    </div>
+                  </div>
+
+                  <div class="clausura-body">
+                    <p>
+                      “La jornada de cierre de TIB Bolivia 2026 estuvo acompañada por un desfile cultural desarrollado en Torres Mall, a partir de las 18:30, como parte de las actividades de clausura.
+                    </p>
+                    <p>
+                      Este espacio permitió destacar las expresiones culturales y artísticas que forman parte de la identidad de nuestro país, brindando un cierre especial a las actividades de esta segunda versión.
+                    </p>
+                    <p class="clausura-final-quote">
+                      Concluyendo así las tres jornadas de encuentros empresariales, promoción turística, gastronomía y actividades culturales. Finalizando con el cierre total de la feria.”
+                    </p>
+
+                    <!-- REPRODUCTOR DE VIDEO INTEGRADO (preparado según requerimiento del PDF)
+                         Si se dispone de un video breve con calidad adecuada, se activará aquí sin redirigir afuera -->
+                    <div class="clausura-video-box">
+                      <div class="cv-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                        <span>Registro Audiovisual Integrado</span>
+                      </div>
+                      <div class="video-placeholder-container">
+                        <div class="vp-message">
+                          <span>Reproductor de video de clausura</span>
+                          <small>Espacio reservado para video institucional breve</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="event-thumbs-wrap">
+                  <span class="thumbs-label">Galería de los momentos más representativos de la clausura y desfile</span>
+                  <div class="event-thumbs-grid">
+                    <div class="thumb-placeholder"><span>Desfile 1</span></div>
+                    <div class="thumb-placeholder"><span>Desfile 2</span></div>
+                    <div class="thumb-placeholder"><span>Trajes típicos</span></div>
+                    <div class="thumb-placeholder"><span>Acto final</span></div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /day-three-stack -->
+          </section>
+
+        </div><!-- /feria-days-container -->
+
+      </div><!-- /etab-feria -->
+
+    </div><!-- /actividades-inner -->
+  </section>
+  <!-- ═══ FIN SECCIÓN ACTIVIDADES / EVENTOS (Fase 1) ════════════════════════ -->
+
+  <!-- ═══════════════════════════ SECCIÓN 4: PRENSA ═══════════════════════════ -->
+  <section id="prensa" class="section-prensa has-bg">
+    <div class="section-bg" data-bg="prensa">
+      <img src="contenido/TIB-img-paisajes/fransoopatrick-lake-3669992.webp" alt="" loading="lazy" />
+      <div class="section-bg-overlay"></div>
+    </div>
+    <div class="section-intro reveal">
+      <div class="section-tag-v">PRENSA</div>
+      <h2 class="section-h2">Acreditación de Prensa</h2>
+    </div>
+    <div class="prensa-layout">
+      <div class="prensa-text reveal">
+        <p>Invitamos a los medios de comunicación y periodistas especializados a cubrir TIB BOLIVIA 2026, el epicentro informativo que reunirá a los líderes, empresas y tomadores de decisión más influyentes del turismo nacional e internacional.</p>
+        <p>Al acreditarse, su medio tendrá acceso exclusivo a conferencias de prensa, presentaciones de proyectos de alto impacto, lanzamientos sectoriales y un espacio propicio para la cobertura de las últimas tendencias de la industria.</p>
+        <div class="prensa-highlights">
+          <div class="ph-item"><span>📰</span> Sesiones informativas exclusivas</div>
+          <div class="ph-item"><span>🎤</span> Entrevistas con líderes del sector</div>
+          <div class="ph-item"><span>📸</span> Acceso completo al evento</div>
+        </div>
+      </div>
+      <div class="prensa-img-wrap">
+      <img src="https://i.postimg.cc/4xCvRgbz/prensa-tib.jpg" alt="La Paz Bolivia" class="prensa-img reveal" loading="lazy" />
+      </div>
+      <a href="#contacto" class="btn-primary" data-cform="prensa">Información y Participa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SECCIÓN 5: CONTACTO ═══════════════════════════ -->
+  <section id="contacto" class="section-contacto has-bg">
+    <div class="section-bg" data-bg="contacto">
+      <img src="contenido/TIB-img-paisajes/La_Paz-Bolivia.webp" alt="" loading="lazy" />
+      <div class="section-bg-overlay"></div>
+    </div>
+    <div class="section-intro reveal">
+      <div class="section-tag-v">CONTACTO</div>
+      <h2 class="section-h2">Ponte en Contacto</h2>
+      <p class="section-desc">Estamos listos para responder todas tus consultas sobre TIB Bolivia 2026.</p>
+    </div>
+      <!-- Menú selector de tipo de formulario -->
+      <div class="contact-tabs reveal">
+        <h3>Selecciona el tipo de consulta para brindarte la información más relevante:</h3>
+        <button type="button" class="vtab ctab active" data-cform="general">Consulta General</button>
+        <button type="button" class="vtab ctab" data-cform="inscripcion">Empresa interesada</button>
+      <!--  <button type="button" class="vtab ctab" data-cform="visitantes">Publico visitante</button> -->
+        <button type="button" class="vtab ctab" data-cform="prensa">Prensa / Acreditación</button>
+      </div>
+
+      <!-- Formulario contactos en general de sección Contacto -->
+    <div class="cform-panel active" id="cform-general">
+    <form class="tib-form contact-form" id="contactForm">
+      <h3>Contáctanos General</h3>
+      <div class="form-row">
+        <div class="form-group"><input type="text" name="nombre" placeholder="Nombre" required /></div>
+        <div class="form-group"><input type="text" name="apellido" placeholder="Apellido" required /></div>
+      </div>
+      <div class="form-group"><input type="email" name="email" placeholder="Email" required /></div>
+      <div class="form-group"><input type="text" name="asunto" placeholder="Asunto" required /></div>
+      <div class="form-row">
+        <div class="form-group phone-wrap">
+          <select class="phone-code">
+            <option value="+591">🇧🇴 +591</option>
+            <option value="+54">🇦🇷 +54</option>
+            <option value="+55">🇧🇷 +55</option>
+            <option value="+56">🇨🇱 +56</option>
+            <option value="+57">🇨🇴 +57</option>
+            <option value="+51">🇵🇪 +51</option>
+            <option value="+1">🇺🇸 +1</option>
+            <option value="+34">🇪🇸 +34</option>
+            <option value="+49">🇩🇪 +49</option>
+            <option value="other">🌐 Otro</option>
+          </select>
+          <input type="text" class="phone-code-manual" placeholder="+XX" maxlength="6" />
+          <input type="tel" placeholder="Número móvil" />
+        </div>
+        <div class="form-group"><input type="text" name="empresa" placeholder="Empresa" /></div>
+      </div>
+      <div class="form-group">
+        <select name="sector">
+          <option value="" disabled selected>Seleccionar Sector</option>
+          <option>Agencias de Viajes</option>
+          <option>Transporte</option>
+          <option>Alojamientos</option>
+          <option>Gobierno</option>
+          <option>Organismos y Asociaciones</option>
+          <option>Seguros</option>
+          <option>Tecnología</option>
+        </select>
+      </div>
+      <div class="form-checks">
+        <label class="check-label"><input type="checkbox" name="sponsor" /><span class="custom-check"></span>Sponsor</label>
+        <label class="check-label"><input type="checkbox" name="adquiereStand" /><span class="custom-check"></span>Adquiere un Stand</label>
+        <label class="check-label"><input type="checkbox" name="anadirConsulta" /><span class="custom-check"></span>Añadir consulta</label>
+      </div>
+      <div class="form-group"><textarea name="mensaje" placeholder="Mensaje" rows="5"></textarea></div>
+      <button type="submit" class="btn-submit">Enviar Mensaje</button>
+    </form>
+    </div>
+
+      <!-- Formulario de Inscripción sección de Cómo Participar -->
+    <div class="cform-panel" id="cform-inscripcion">
+        <form class="tib-form" id="participateForm">
+          <h3>Solicitar Inscripción</h3>
+          <div class="form-row">
+            <div class="form-group"><input type="text" name="nombre" placeholder="Nombre" required /></div>
+            <div class="form-group"><input type="text" name="apellido" placeholder="Apellido" required /></div>
+          </div>
+          <div class="form-group"><input type="email" name="email" placeholder="Email" required /></div>
+          <div class="form-row">
+            <div class="form-group phone-wrap">
+              <select class="phone-code">
+                <option value="+591">🇧🇴 +591</option>
+                <option value="+54">🇦🇷 +54</option>
+                <option value="+55">🇧🇷 +55</option>
+                <option value="+56">🇨🇱 +56</option>
+                <option value="+57">🇨🇴 +57</option>
+                <option value="+51">🇵🇪 +51</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+34">🇪🇸 +34</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="other">🌐 Otro</option>
+              </select>
+              <input type="text" class="phone-code-manual" placeholder="+XX" maxlength="6" />
+              <input type="tel" placeholder="Número móvil" />
+            </div>
+            <div class="form-group"><input type="text" name="empresa" placeholder="Empresa" /></div>
+          </div>
+          <div class="form-group">
+            <select name="sector" required>
+              <option value="" disabled selected>Seleccionar Sector</option>
+              <option>Agencias de Viajes</option>
+              <option>Transporte</option>
+              <option>Alojamientos</option>
+              <option>Gobierno</option>
+              <option>Organismos y Asociaciones</option>
+              <option>Seguros</option>
+              <option>Tecnología</option>
+              <option>Rent a car</option>
+              <option>Cruseros</option>
+              <option>Compañías Aéreas</option>
+            </select>
+          </div>
+          <div class="form-group"><textarea name="mensaje" placeholder="Mensaje" rows="4"></textarea></div>
+          <button type="submit" class="btn-submit">Enviar Solicitud</button>
+        </form>
+    </div>
+
+      <!-- Formulario para Visitantes sección Visitantes -->
+    <!--<div class="cform-panel" id="cform-visitantes">
+      <form class="tib-form visitor-form" id="visitorForm">
+        <h3>Inscripción Visitantes</h3>
+        <div class="form-row">
+          <div class="form-group"><input type="text" placeholder="Nombre" required /></div>
+          <div class="form-group"><input type="text" placeholder="Apellido" required /></div>
+        </div>
+        <div class="form-group"><input type="email" placeholder="Email" required /></div>
+        <div class="form-row">
+          <div class="form-group phone-wrap">
+            <select class="phone-code">
+              <option value="+591">🇧🇴 +591</option>
+              <option value="+54">🇦🇷 +54</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+56">🇨🇱 +56</option>
+              <option value="+57">🇨🇴 +57</option>
+              <option value="+51">🇵🇪 +51</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="other">🌐 Otro</option>
+            </select>
+            <input type="text" class="phone-code-manual" placeholder="+XX" maxlength="6" />
+            <input type="tel" placeholder="Número móvil" />
+          </div>
+          <div class="form-group">
+            <select required>
+              <option value="" disabled selected>Tipo de Participación</option>
+              <option>Profesional</option>
+              <option>Público en General</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">Inscribirse</button>
+      </form>
+    </div>
+     -->
+      <!-- Formulario de Acreditación de Prensa -->
+    <div class="cform-panel" id="cform-prensa">
+      <form class="tib-form" id="prensaForm">
+        <h3>Formulario de Acreditación</h3>
+        <div class="form-row">
+          <div class="form-group"><input type="text" name="nombre" placeholder="Nombre" required /></div>
+          <div class="form-group"><input type="text" name="apellido" placeholder="Apellido" required /></div>
+        </div>
+        <div class="form-group"><input type="email" name="email" placeholder="Email" required /></div>
+        <div class="form-row">
+          <div class="form-group phone-wrap">
+            <select class="phone-code">
+              <option value="+591">🇧🇴 +591</option>
+              <option value="+54">🇦🇷 +54</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+56">🇨🇱 +56</option>
+              <option value="+57">🇨🇴 +57</option>
+              <option value="+51">🇵🇪 +51</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="other">🌐 Otro</option>
+            </select>
+            <input type="text" class="phone-code-manual" placeholder="+XX" maxlength="6" />
+            <input type="tel" placeholder="Número móvil" />
+          </div>
+          <div class="form-group"><input type="text" name="medio" placeholder="Medio de comunicación" required /></div>
+        </div>
+        <button type="submit" class="btn-submit">Inscribirse</button>
+        <p class="form-note">Su solicitud será evaluada. Nos pondremos en contacto pronto para confirmar su acreditación.</p>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#inicio" class="footer-logo">
+          <!-- Variante blanca por defecto (footer oscuro). En modo claro la color toma el lugar. -->
+          <img src="contenido/TIB-Logos/TIB-HORIZONTAL-BLANCO-1.png" alt="TIB Bolivia" class="footer-logo-img footer-logo-white" />
+          <img src="contenido/TIB-Logos/TIB-HORIZONTAL (logo con clores rojo amarillo y verde).png" alt="TIB Bolivia" class="footer-logo-img footer-logo-color" />
+        </a>
+        <p class="footer-date">22 · 23 · 24 de Octubre, 2026</p>
+        <p class="footer-loc">La Paz, Bolivia</p>
+
+        <!-- BOTÓN FAMTRIP destacado: abre el modal de promociones -->
+        <button type="button" class="footer-famtrip-btn" data-famtrip-open>
+          <span class="ffb-glow"></span>
+          <svg class="ffb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span class="ffb-text">
+            <span class="ffb-eyebrow">Promociones turísticas</span>
+            <span class="ffb-title">Famtrip TIB</span>
+          </span>
+          <span class="ffb-pulse"></span>
+        </button>
+
+        <div class="footer-socials">
+          <a href="https://api.whatsapp.com/send?phone=59163162160" target="_blank" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/tib.internacional" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61568206385840" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@TIB-Bolivia" target="_blank" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@tib_bolivia" target="_blank" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69A8.16 8.16 0 0 0 21.5 10v-3.4a4.85 4.85 0 0 1-1.91-.91z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-nav-col">
+        <h5>Feria</h5>
+        <ul>
+          <li><a href="#feria">Presentación</a></li>
+          <li><a href="#feria">Organizadores</a></li>
+          <li><a href="#memorias">Memoria 2025</a></li>
+          <li><a href="#stands">Stands</a></li>
+          <li><a href="#prensa">Prensa</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-col">
+        <h5>TIB Bolivia</h5>
+        <ul>
+          <li><a href="#tib">¿Por qué Participar?</a></li>
+          <li><a href="#tib">¿Quiénes Participan?</a></li>
+          <li><a href="#stands">Adquiere tu Stand</a></li>
+          <li><a href="#visitantes">Visitantes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TIB Bolivia · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- MEMORIA 2025 FAB -->
+  <a href="#memorias" class="memoria-fab fab-base" aria-label="Memoria 2025">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <circle cx="8.5" cy="8.5" r="1.5"/>
+      <path d="M21 15l-5-5L5 21"/>
+    </svg>
+    <span class="fab-label">Memoria 2025</span>
+    <span class="fab-pulse memoria-pulse"></span>
+  </a>
+
+  <!-- GUÍA TURÍSTICA FAB -->
+  <!-- Link de la paguina de guía turística -->
+  <a href="https://ecomarketmex.com/plantillas/directorioturismo/index.php" target="_blank" class="guia-fab fab-base" aria-label="Guía Turística">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+    </svg>
+    <span class="fab-label">Guía Turística</span>
+    <span class="fab-pulse guia-pulse"></span>
+  </a>
+    <!--Si el Link no está disponible pegar el enlace real aquí del PDF en (href="....." y data-web=".....") -->
+  <a href="https://heyzine.com/flip-book/563c92b10f.html" target="_blank"
+     data-pdf="contenido/Brochure TIB BOLIVIA 2026.pdf"
+     data-web="https://heyzine.com/flip-book/53e2389b80.html"
+     class="brochure-fab fab-base" aria-label="Brochure">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <path d="M14 2v6h6"/>
+      <path d="M9 13h6M9 17h6M9 9h2"/>
+    </svg>
+    <span class="fab-label">Brochure</span>
+    <span class="fab-pulse brochure-pulse"></span>
+  </a>
+
+  <!-- WHATSAPP FAB -->
+                                <!-- Aqui cambiar el numero de celular -->
+  <a href="https://api.whatsapp.com/send?phone=59163162160" target="_blank" class="wa-fab fab-base" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="fab-pulse wa-pulse"></span>
+  </a>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       FASE 4: LIGHTBOX / VISOR DE FOTOGRAFÍAS SUPERPUESTO
+       ───────────────────────────────────────────────────────────────────────────
+       Permite ampliar las fotografías de actividades y eventos dentro de la
+       misma página sin abrir pestañas nuevas (requisito explícito del PDF).
+       Cierre mediante botón X, clic en fondo exterior o tecla Escape.
+       Navegación mediante flechas o teclas izquierda/derecha.
+  ═══════════════════════════════════════════════════════════════════════════ -->
+  <div class="tib-lightbox" id="tibLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightboxTitle">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    
+    <div class="lightbox-dialog" role="document">
+      <!-- Botón cerrar -->
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Cerrar visor">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <!-- Botón Anterior -->
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Fotografía anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <!-- Botón Siguiente -->
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Fotografía siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Contenedor de imagen / placeholder -->
+      <div class="lightbox-media-container">
+        <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+        <div class="lightbox-placeholder-view" id="lightboxPlaceholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <h4 id="lightboxTitle">Visor de Fotografías Oficiales</h4>
+          <p id="lightboxCaption">
+            El archivo fotográfico oficial se desplegará aquí en alta resolución una vez sea incorporado.
+          </p>
+          <span class="lb-ph-tag">Visualización interna integrada · TIB Bolivia 2026</span>
+        </div>
+      </div>
+
+      <!-- Barra inferior de información -->
+      <div class="lightbox-footer">
+        <span class="lightbox-counter" id="lightboxCounter">1 / 4</span>
+        <span class="lightbox-title-text" id="lightboxEventTitle">Evento TIB Bolivia</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
